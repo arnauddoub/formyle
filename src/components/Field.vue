@@ -1,0 +1,28 @@
+<template>
+  <div class="relative border-2 rounded-md focus-within:border-blue-500 mb-4">
+    <slot />
+    <label class="absolute top-0 text-lg bg-white p-4 -z-1 duration-300 origin-0">{{ label }}</label>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    label: {
+      type: String,
+      default: '',
+    },
+  },
+}
+</script>
+
+<style scoped>
+input:focus-within ~ label,
+input:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-4 z-0 ml-3 px-1 py-0;
+}
+
+input:focus-within ~ label {
+  @apply text-blue-500;
+}
+</style>
