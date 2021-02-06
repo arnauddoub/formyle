@@ -1,7 +1,7 @@
 <template>
   <div class="relative border-2 rounded-md focus-within:border-blue-500 mb-4">
     <slot />
-    <label class="absolute top-0 text-lg bg-white p-4 -z-1 duration-300 origin-0">{{ label }}</label>
+    <label class="absolute top-0 text-lg bg-white p-4 -z-1 duration-300 origin-0 text-gray-500">{{ label }}</label>
   </div>
 </template>
 
