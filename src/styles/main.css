@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.page-right-enter-active,
+.page-right-leave-active,
+.page-left-enter-active,
+.page-left-leave-active{
+    transition: opacity .11s linear, transform .11s ease-in-out;
+}
+
+.page-right-enter-from,
+.page-right-leave-to,
+.page-left-enter-from,
+.page-left-leave-to {
+    opacity: 0;
+}
+
+.page-right-enter-from {
+    transform: translateX(10%);
+}
+
+.page-right-leave-to {
+    transform: translateX(-10%);
+}
+
+.page-left-enter-from {
+    transform: translateX(-10%);
+}
+
+.page-left-leave-to {
+    transform: translateX(10%);
+}
