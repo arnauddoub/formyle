@@ -17,25 +17,22 @@ export default {
       default: null,
     },
   },
-  emits: ['update:modelValue'],
-  data() {
-    return {
-      currentStepIndex: this.modelValue,
-    }
-  },
+  emits: ['update:modelValue', 'test'],
   methods: {
     prevStep() {
-      const step = STEPS[this.currentStepIndex - 1]
+      const index = this.modelValue - 1
+      const step = STEPS[index]
       if (step) {
         this.$router.push(step.path)
-        this.$emit('update:modelValue', this.currentStepIndex--)
+        this.$emit('update:modelValue', index)
       }
     },
     nextStep() {
-      const step = STEPS[this.currentStepIndex + 1]
+      const index = this.modelValue + 1
+      const step = STEPS[index]
       if (step) {
         this.$router.push(step.path)
-        this.$emit('update:modelValue', this.currentStepIndex++)
+        this.$emit('update:modelValue', index)
       }
     },
   },
