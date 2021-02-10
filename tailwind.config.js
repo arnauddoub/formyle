@@ -6,18 +6,18 @@ module.exports = {
   theme: {
     extend: {
       transformOrigin: {
-        0: '0%'
+        0: '0%',
       },
       zIndex: {
-        '-1': '-1'
-      }
-    }
+        '-1': '-1',
+      },
+    },
   },
   variants: {
-    extend: {}
+    extend: {},
   },
   plugins: [
     // require('@tailwindcss/forms')
     // require('@tailwindcss/typography')
-  ]
+  ],
 }
