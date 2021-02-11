@@ -1,10 +1,19 @@
 <template>
   <div class="text-center mb-5">
-    <ul class="flex">
-      <li v-for="category in categories" :key="category" class="flex-1">{{ category }}</li>
-    </ul>
-    <div class="w-full h-1 bg-gray-200">
-      <div class="bg-blue-500 h-full" :style="{ width: width + '%' }" />
+    <div class="relative">
+      <div class="absolute bottom-2 w-full h-1 bg-gray-200">
+        <div class="bg-blue-500 h-full" :style="{ width: width + '%' }" />
+      </div>
+      <ul class="flex">
+        <li
+          v-for="category in categories"
+          :key="category"
+          class="category flex-1 pb-5 relative"
+          :class="{ active: category.active }"
+        >
+          {{ category.name }}
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -47,20 +56,43 @@ export default {
   methods: {
     distinctCategory() {
       STEPS.forEach((value) => {
-        if (this.categories.indexOf(value.category) === -1) {
-          this.categories.push(value.category)
+        const category = this.categories.find((element) => element.name === value.category)
+        if (typeof category === 'undefined') {
+          const categoryIndex = STEPS.map((step) => step.category === value.category).lastIndexOf(true)
+          this.categories.push({ name: STEPS[categoryIndex].category, active: false, index: categoryIndex })
         }
       })
+    },
+    progressBarIncrement(index) {
+      this.width += 100 / this.categories.length / this.countStepByCategory(index)
+      this.changeCategoryStatus(index, true)
+    },
+    progressBarDecrement(index) {
+      this.width -= 100 / this.categories.length / this.countStepByCategory(index)
+      this.changeCategoryStatus(index, false)
     },
     countStepByCategory(index) {
       return STEPS.reduce((counter, obj) => (obj.category === STEPS[index].category ? (counter += 1) : counter), 0)
     },
-    progressBarIncrement(index) {
-      this.width += 100 / this.categories.length / this.countStepByCategory(index)
-    },
-    progressBarDecrement(index) {
-      this.width -= 100 / this.categories.length / this.countStepByCategory(index)
+    changeCategoryStatus(index, active) {
+      const categoryIndex = this.categories.findIndex((element) => index === element.index)
+      if (categoryIndex >= 0) {
+        this.categories[categoryIndex].active = active
+      }
     },
   },
 }
 </script>
+
+<style scoped>
+.category:after {
+  content: '';
+  @apply absolute bottom-0 -right-2.5 w-5 h-5 rounded-full bg-white border-2 border-gray-200;
+}
+.category:last-child:after {
+  @apply right-0;
+}
+.category.active:after {
+  @apply bg-blue-500;
+}
+</style>

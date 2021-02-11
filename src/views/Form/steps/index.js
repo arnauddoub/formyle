@@ -5,31 +5,31 @@ export const STEPS = [
   {
     name: 'Loans',
     path: 'loans',
-    category: 'A',
+    category: 'Finances',
     component: Loans,
   },
   {
     name: 'Loansa',
     path: 'loansa',
-    category: 'A',
+    category: 'Finances',
     component: Details,
   },
   {
     name: 'Loansb',
     path: 'loansb',
-    category: 'A',
+    category: 'Finances',
     component: Loans,
   },
   {
     name: 'Details',
     path: 'details',
-    category: 'B',
+    category: 'Details',
     component: Details,
   },
   {
     name: 'Detailsa',
     path: 'detailsa',
-    category: 'B',
+    category: 'Details',
     component: Loans,
   },
 ]
