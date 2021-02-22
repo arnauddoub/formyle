@@ -8,31 +8,33 @@
 </template>
 
 <script>
-import { STEPS } from '../views/Form/steps'
-
 export default {
-  props: {
-    modelValue: {
-      type: Number,
-      default: null,
+  computed: {
+    steps() {
+      return this.$store.state.steps.all
+    },
+    version() {
+      return this.$store.state.steps.version
+    },
+    currentStepIndex() {
+      return this.$store.state.steps.currentIndex
     },
   },
-  emits: ['update:modelValue', 'test'],
   methods: {
     prevStep() {
-      const index = this.modelValue - 1
-      const step = STEPS[index]
+      const index = this.currentStepIndex - 1
+      const step = this.steps[index]
       if (step) {
-        this.$router.push(step.path)
-        this.$emit('update:modelValue', index)
+        this.$router.push({ name: this.version + step.name })
+        this.$store.commit('steps/changeCurrentIndex', index)
       }
     },
     nextStep() {
-      const index = this.modelValue + 1
-      const step = STEPS[index]
+      const index = this.currentStepIndex + 1
+      const step = this.steps[index]
       if (step) {
-        this.$router.push(step.path)
-        this.$emit('update:modelValue', index)
+        this.$router.push({ name: this.version + step.name })
+        this.$store.commit('steps/changeCurrentIndex', index)
       }
     },
   },

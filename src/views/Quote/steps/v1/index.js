@@ -1,7 +1,7 @@
 import Loans from './Loans.vue'
 import Details from './Details.vue'
 
-export const STEPS = [
+export const stepsV1 = [
   {
     name: 'Loans',
     path: 'loans',

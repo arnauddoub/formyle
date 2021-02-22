@@ -1,38 +1,36 @@
 <template>
-  <div class="text-center mb-5">
-    <div class="relative">
-      <div class="absolute bottom-2 w-full h-1 bg-gray-200">
-        <div class="bg-blue-500 h-full" :style="{ width: width + '%' }" />
-      </div>
-      <ul class="flex">
-        <li
-          v-for="category in categories"
-          :key="category"
-          class="category flex-1 pb-5 relative"
-          :class="{ active: category.active }"
-        >
-          {{ category.name }}
-        </li>
-      </ul>
+  <div class="text-center mb-5 relative">
+    <div class="absolute bottom-2 w-full h-1 bg-gray-200">
+      <div class="bg-blue-500 h-full" :style="{ width: width + '%' }" />
     </div>
+    <ul class="flex">
+      <li
+        v-for="category in categories"
+        :key="category"
+        class="category flex-1 pb-5 relative"
+        :class="{ active: category.active }"
+      >
+        {{ category.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import { STEPS } from '../views/Form/steps'
-
 export default {
-  props: {
-    currentStepIndex: {
-      type: Number,
-      default: null,
-    },
-  },
   data() {
     return {
       width: 0,
       categories: [],
     }
+  },
+  computed: {
+    steps() {
+      return this.$store.state.steps.all
+    },
+    currentStepIndex() {
+      return this.$store.state.steps.currentIndex
+    },
   },
   watch: {
     currentStepIndex(newValue, oldValue) {
@@ -55,11 +53,11 @@ export default {
   },
   methods: {
     distinctCategory() {
-      STEPS.forEach((value) => {
+      this.steps.forEach((value) => {
         const category = this.categories.find((element) => element.name === value.category)
         if (typeof category === 'undefined') {
-          const categoryIndex = STEPS.map((step) => step.category === value.category).lastIndexOf(true)
-          this.categories.push({ name: STEPS[categoryIndex].category, active: false, index: categoryIndex })
+          const categoryIndex = this.steps.map((step) => step.category === value.category).lastIndexOf(true)
+          this.categories.push({ name: this.steps[categoryIndex].category, active: false, index: categoryIndex })
         }
       })
     },
@@ -72,7 +70,10 @@ export default {
       this.changeCategoryStatus(index, false)
     },
     countStepByCategory(index) {
-      return STEPS.reduce((counter, obj) => (obj.category === STEPS[index].category ? (counter += 1) : counter), 0)
+      return this.steps.reduce(
+        (counter, obj) => (obj.category === this.steps[index].category ? (counter += 1) : counter),
+        0,
+      )
     },
     changeCategoryStatus(index, active) {
       const categoryIndex = this.categories.findIndex((element) => index === element.index)
