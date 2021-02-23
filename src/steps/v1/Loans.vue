@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import InputNumeric from '../../../../components/InputNumeric.vue'
-import Field from '../../../../components/Field.vue'
-import Fields from '../../../../components/Fields.vue'
-import Inputa from '../../../../components/Inputa.vue'
+import InputNumeric from '@/components/InputNumeric.vue'
+import Field from '@/components/Field.vue'
+import Fields from '@/components/Fields.vue'
+import Inputa from '@/components/Inputa.vue'
 
 export default {
   name: 'Loan',

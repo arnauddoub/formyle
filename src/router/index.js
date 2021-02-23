@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { steps } from '@/views/Quote/steps'
+import { steps } from '@/steps'
 
 const getStepsRoutes = () => {
   const allStepsRoutes = []
@@ -19,8 +19,7 @@ const routes = [
   {
     path: '/quote',
     name: 'Quote',
-    component: () => import(/* webpackChunkName: "quote" */ '@/views/Quote/Quote.vue'),
-    // redirect: { name: 'Loans' },
+    component: () => import(/* webpackChunkName: "quote" */ '@/views/Quote.vue'),
     children: getStepsRoutes(),
   },
   {

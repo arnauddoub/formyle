@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import { steps } from './steps'
-import Forma from '../../components/Forma.vue'
-import Navigation from '../../components/Navigation.vue'
-import Categories from '../../components/Categories.vue'
+import { steps } from '../steps'
+import Forma from '../components/Forma.vue'
+import Navigation from '../components/Navigation.vue'
+import Categories from '../components/Categories.vue'
 
 export default {
   name: 'Quote',
