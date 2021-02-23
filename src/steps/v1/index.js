@@ -3,7 +3,7 @@ import Details from './Details.vue'
 
 export const stepsV1 = [
   {
-    name: 'start',
+    name: 'Start',
     path: 'start',
     category: 'Finances',
     component: Loans,
