@@ -26,12 +26,16 @@ export default {
     Forma,
   },
   beforeCreate() {
-    const version = this.$route.path.split('/')[2]
+    let version = this.$route.path.split('/')[2]
+    if (typeof version === 'undefined' || version === '') {
+      version = Object.keys(steps)[0]
+      this.$router.push({ name: version + steps[version][0].name })
+    }
     this.$store.commit('steps/addVersion', version)
     const stepsSelected = steps[version]
     this.$store.commit('steps/addSteps', stepsSelected)
     const index = stepsSelected.findIndex((element) => version + element.name === this.$route.name)
-    this.$store.commit('steps/changeCurrentIndex', index)
+    this.$store.commit('steps/changeCurrentIndex', index > -1 ? index : 0)
   },
 }
 </script>
