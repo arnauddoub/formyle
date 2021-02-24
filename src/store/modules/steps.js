@@ -23,7 +23,8 @@ const mutations = {
     state.stepIndex = item
   },
   changeStepIndexByRoute(state, route) {
-    state.stepIndex = state.all.findIndex((element) => state.version + element.name === route)
+    const index = state.all.findIndex((element) => state.version + element.name === route)
+    state.stepIndex = index > -1 ? index : 0
   },
 }
 
