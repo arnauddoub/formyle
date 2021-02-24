@@ -17,7 +17,7 @@ export default {
       return this.$store.state.steps.version
     },
     currentStepIndex() {
-      return this.$store.state.steps.currentIndex
+      return this.$store.state.steps.stepIndex
     },
   },
   methods: {
@@ -26,7 +26,7 @@ export default {
       const step = this.steps[index]
       if (step) {
         this.$router.push({ name: this.version + step.name })
-        this.$store.commit('steps/changeCurrentIndex', index)
+        this.$store.commit('steps/changeStepIndex', index)
       }
     },
     nextStep() {
@@ -34,7 +34,7 @@ export default {
       const step = this.steps[index]
       if (step) {
         this.$router.push({ name: this.version + step.name })
-        this.$store.commit('steps/changeCurrentIndex', index)
+        this.$store.commit('steps/changeStepIndex', index)
       }
     },
   },

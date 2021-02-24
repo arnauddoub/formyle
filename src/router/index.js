@@ -33,13 +33,4 @@ const router = createRouter({
   routes,
 })
 
-router.afterEach((to, from) => {
-  const version = to.path.split('/')[2]
-  if (typeof version !== 'undefined' || version !== '') {
-    const toDepth = steps[version].findIndex((element) => element.name === to.name)
-    const fromDepth = steps[version].findIndex((element) => element.name === from.name)
-    to.meta.transitionName = toDepth < fromDepth ? 'page-left' : 'page-right'
-  }
-})
-
 export default router

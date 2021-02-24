@@ -7,7 +7,7 @@
           <component :is="Component" />
         </transition>
       </router-view>
-      <Navigation />
+      <Navigation ref="navigation" />
     </forma>
   </div>
 </template>
@@ -25,17 +25,37 @@ export default {
     Navigation,
     Forma,
   },
+  beforeRouteUpdate(to, from) {
+    const toDepth = this.steps.findIndex((element) => this.version + element.name === to.name)
+    const fromDepth = this.steps.findIndex((element) => this.version + element.name === from.name)
+    to.meta.transitionName = toDepth < fromDepth ? 'page-left' : 'page-right'
+  },
+  computed: {
+    steps() {
+      return this.$store.state.steps.all
+    },
+    version() {
+      return this.$store.state.steps.version
+    },
+    currentStepIndex() {
+      return this.$store.state.steps.stepIndex
+    },
+  },
+  created() {
+    window.onpopstate = () => {
+      this.$store.commit('steps/changeStepIndexByRoute', this.$route.name)
+    }
+  },
   beforeCreate() {
     let version = this.$route.path.split('/')[2]
     if (typeof version === 'undefined' || version === '') {
       version = Object.keys(steps)[0]
       this.$router.push({ name: version + steps[version][0].name })
     }
-    this.$store.commit('steps/addVersion', version)
     const stepsSelected = steps[version]
+    this.$store.commit('steps/addVersion', version)
     this.$store.commit('steps/addSteps', stepsSelected)
-    const index = stepsSelected.findIndex((element) => version + element.name === this.$route.name)
-    this.$store.commit('steps/changeCurrentIndex', index > -1 ? index : 0)
+    this.$store.commit('steps/changeStepIndexByRoute', this.$route.name)
   },
 }
 </script>

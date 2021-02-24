@@ -29,7 +29,7 @@ export default {
       return this.$store.state.steps.all
     },
     currentStepIndex() {
-      return this.$store.state.steps.currentIndex
+      return this.$store.state.steps.stepIndex
     },
   },
   watch: {

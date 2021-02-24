@@ -2,7 +2,7 @@
 const state = () => ({
   all: [],
   version: null,
-  currentIndex: null,
+  stepIndex: null,
 })
 
 // getters
@@ -19,8 +19,11 @@ const mutations = {
   addVersion(state, item) {
     state.version = item
   },
-  changeCurrentIndex(state, item) {
-    state.currentIndex = item
+  changeStepIndex(state, item) {
+    state.stepIndex = item
+  },
+  changeStepIndexByRoute(state, route) {
+    state.stepIndex = state.all.findIndex((element) => state.version + element.name === route)
   },
 }
 
