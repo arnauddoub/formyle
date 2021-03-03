@@ -1,9 +1,7 @@
-const stipSpace = (str) => {
+export function stipSpace(str) {
   return str.replace(/\s/g, '')
 }
 
-const stripNaN = (str) => {
+export function stripNaN(str) {
   return str.replace(/[^\d]/g, '')
 }
-
-export { stripNaN, stipSpace }
