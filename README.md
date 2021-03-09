@@ -1,4 +1,6 @@
-# `Forms Comparator`
+# Formyle
+
+Advanced Vue 3 form conception
 
 ## Features
 
@@ -14,12 +16,10 @@
 npm install
 npm run dev
 npm run build
-npm run serve
 ```
 ### yarn:
 ```sh
 yarn
 yarn dev
 yarn build
-yarn serve
 ```
