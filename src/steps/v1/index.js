@@ -1,3 +1,4 @@
+import WhichPet from './WhichPet.vue'
 import Loans from './Loans.vue'
 import Details from './Details.vue'
 
@@ -5,8 +6,8 @@ export const stepsV1 = [
   {
     name: 'Start',
     path: 'start',
-    category: 'Finances',
-    component: Loans,
+    category: 'Compagnon',
+    component: WhichPet,
   },
   {
     name: 'Loansa',
