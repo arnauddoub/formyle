@@ -5,3 +5,14 @@
     placeholder=" "
   />
 </template>
+
+<script>
+export default {
+  props: {
+    modalValue: {
+      type: [String, Number],
+      default: null,
+    },
+  },
+}
+</script>
