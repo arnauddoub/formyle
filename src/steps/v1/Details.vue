@@ -2,15 +2,22 @@
   <div class="details">
     <fields>
       <field label="Téléphone">
-        <input-numeric v-model="value" :allow-decimal="true" />
+        <input-numeric v-model="phone" />
       </field>
-      <field label="Email">
-        <inputa />
-      </field>
+      <!--      <field label="Email">-->
+      <!--        <input-numeric :allow-decimal="true" />-->
+      <!--      </field>-->
+      <!--    </fields>-->
+      <!--    <field label="Adresse">-->
+      <!--      <inputa />-->
+      <!--    </field>-->
     </fields>
-    <field label="Adresse">
-      <inputa />
-    </field>
+    <fields v-for="(test, index) in tests" :key="index">
+      <label>Email <input v-model="test.email" /></label>
+      <label>Address <input v-model="test.address" /></label>
+      <button @click="removeTestsRow(index)">Remove</button>
+    </fields>
+    <button @click="addTestsRow">Add</button>
   </div>
 </template>
 
@@ -18,21 +25,28 @@
 import InputNumeric from '@/components/InputNumeric.vue'
 import Field from '@/components/Field.vue'
 import Fields from '@/components/Fields.vue'
-import Inputa from '@/components/Inputa.vue'
+import { mapMutations } from 'vuex'
+import { createHelpers } from 'vuex-map-fields'
+
+const { mapFields, mapMultiRowFields } = createHelpers({
+  getterType: 'quote/getField',
+  mutationType: 'quote/updateField',
+})
 
 export default {
   name: 'Form',
   components: {
-    Inputa,
     Fields,
     Field,
     InputNumeric,
   },
 
-  data() {
-    return {
-      value: 100,
-    }
+  computed: {
+    ...mapFields(['phone']),
+    ...mapMultiRowFields(['tests']),
+  },
+  methods: {
+    ...mapMutations('quote', ['addTestsRow', 'removeTestsRow']),
   },
 }
 </script>
