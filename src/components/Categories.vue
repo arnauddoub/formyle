@@ -24,6 +24,7 @@ export default {
       categories: [],
     }
   },
+
   computed: {
     steps() {
       return this.$store.state.steps.all
@@ -32,6 +33,7 @@ export default {
       return this.$store.state.steps.stepIndex
     },
   },
+
   watch: {
     currentStepIndex(newValue, oldValue) {
       if (newValue > oldValue) {
@@ -41,6 +43,7 @@ export default {
       }
     },
   },
+
   mounted() {
     this.distinctCategory()
     if (this.currentStepIndex > 0) {
@@ -51,6 +54,7 @@ export default {
       this.progressBarIncrement(this.currentStepIndex)
     }
   },
+
   methods: {
     distinctCategory() {
       this.steps.forEach((value) => {
