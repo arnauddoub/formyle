@@ -65,7 +65,7 @@ export default {
 
   methods: {
     validateStep() {
-      if (this.$refs.step.validate()) {
+      if (typeof this.$refs.step.validate !== 'function' || this.$refs.step.validate()) {
         this.$refs.navigation.nextStep()
       }
     },
