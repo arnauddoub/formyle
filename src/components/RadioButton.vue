@@ -9,10 +9,7 @@
       class="absolute appearance-none -z-1 w-0 h-0"
       @click="handleClick"
     />
-    <label
-      :for="id"
-      class="cursor-pointer h-40 rounded-md border-2 flex items-center justify-center select-none duration-300 hover:bg-blue-50"
-    >
+    <label :for="id" :class="{ 'bg-red-100 border-red-300': error }" class="radio-button">
       <slot />
     </label>
   </div>
@@ -39,6 +36,10 @@ export default {
       type: String,
       default: null,
     },
+    error: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   emits: ['update:modelValue', 'click'],
@@ -63,7 +64,10 @@ export default {
 </script>
 
 <style scoped>
+.radio-button {
+  @apply cursor-pointer h-40 rounded-md border-2 flex items-center justify-center select-none duration-300 hover:bg-blue-50 hover:border-blue-400 flex-col;
+}
 input[type='radio']:checked + label {
-  @apply border-blue-500 bg-blue-50;
+  @apply border-blue-400 bg-blue-50;
 }
 </style>
