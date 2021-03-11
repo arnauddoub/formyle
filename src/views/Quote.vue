@@ -2,13 +2,11 @@
   <div class="overflow-hidden">
     <forma v-if="currentStepIndex !== null && currentStepIndex >= 0" @keyup.enter="validateStep">
       <categories />
-      <div>
-        <router-view v-slot="{ Component, route }" @nextStep="validateStep">
-          <transition :name="route.meta.transitionName" mode="out-in">
-            <component :is="Component" ref="step" />
-          </transition>
-        </router-view>
-      </div>
+      <router-view v-slot="{ Component, route }" @nextStep="validateStep">
+        <transition :name="route.meta.transitionName" mode="out-in">
+          <component :is="Component" ref="step" />
+        </transition>
+      </router-view>
       <Navigation ref="navigation" @onComplete="submit" @validateStep="validateStep" />
     </forma>
   </div>
