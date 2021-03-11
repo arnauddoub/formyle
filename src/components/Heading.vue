@@ -18,7 +18,7 @@ export default {
 
   computed: {
     defaultClass() {
-      return 'mb-4'
+      return 'font-medium mb-4'
     },
   },
 }
