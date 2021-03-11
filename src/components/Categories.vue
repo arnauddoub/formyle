@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center mb-5 relative">
+  <div class="text-center mb-10 relative">
     <div class="absolute bottom-2 w-full h-1 bg-gray-200">
       <div class="bg-blue-500 h-full" :style="{ width: width + '%' }" />
     </div>

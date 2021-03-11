@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between mt-4">
+  <div class="flex justify-between mt-10">
     <button
       v-if="currentStepIndex > 0"
       class="px-10 py-3 border-2 border-blue-500 text-blue-500 rounded-md focus:outline-none select-none"
