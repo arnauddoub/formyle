@@ -11,7 +11,7 @@
     />
     <label
       :for="id"
-      class="h-40 rounded-md border-2 flex items-center justify-center select-none duration-300 hover:bg-blue-50"
+      class="cursor-pointer h-40 rounded-md border-2 flex items-center justify-center select-none duration-300 hover:bg-blue-50"
     >
       <slot />
     </label>
