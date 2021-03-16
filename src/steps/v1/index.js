@@ -1,6 +1,7 @@
 import WhichPet from './WhichPet.vue'
-import Loans from './Loans.vue'
 import Details from './Details.vue'
+import Loans from './Loans.vue'
+import Example from './Example.vue'
 
 export const stepsV1 = [
   {
@@ -10,9 +11,9 @@ export const stepsV1 = [
     component: WhichPet,
   },
   {
-    name: 'Loansa',
-    path: 'loansa',
-    category: 'Finances',
+    name: 'Details',
+    path: 'details',
+    category: 'Compagnon',
     component: Details,
   },
   {
@@ -22,10 +23,10 @@ export const stepsV1 = [
     component: Loans,
   },
   {
-    name: 'Details',
-    path: 'details',
+    name: 'Example',
+    path: 'Example',
     category: 'Details',
-    component: Details,
+    component: Example,
   },
   {
     name: 'Detailsa',

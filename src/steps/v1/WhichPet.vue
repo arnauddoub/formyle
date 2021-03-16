@@ -4,32 +4,32 @@
     <field type="radio">
       <radio-group>
         <radio-button
-          id="witch_pet-chien"
-          v-model="witchPet"
-          name="witch_pet"
-          value="dog"
-          :error="v$.witchPet.$error"
+          id="which_pet-chien"
+          v-model="whichPet"
+          name="which_pet"
+          value="chien"
+          :error="v$.whichPet.$error"
+          size="lg"
           @change="$emit('nextStep')"
         >
-          <div class="text-center">
-            <img src="../../assets/dog.svg" alt="dog" width="60" height="60" />
-            <div class="mt-2">Chien</div>
-          </div>
+          <img src="../../assets/dog.svg" alt="dog" width="60" height="60" />
+          <div class="mt-2 text-lg">Chien</div>
         </radio-button>
         <radio-button
-          id="witch_pet-chat"
-          v-model="witchPet"
-          name="witch_pet"
-          value="cat"
-          :error="v$.witchPet.$error"
+          id="which_pet-chat"
+          v-model="whichPet"
+          name="which_pet"
+          value="chat"
+          :error="v$.whichPet.$error"
+          size="lg"
           @change="$emit('nextStep')"
         >
           <img src="../../assets/cat.svg" alt="cat" width="60" height="60" />
-          <div class="mt-2">Chat</div>
+          <div class="mt-2 text-lg">Chat</div>
         </radio-button>
       </radio-group>
-      <template v-if="v$.witchPet.$error" #error>
-        <span v-if="v$.witchPet.required">Veuillez sélectionner votre animal à assurer</span>
+      <template v-if="v$.whichPet.$error" #error>
+        <span v-if="v$.whichPet.required">Veuillez sélectionner votre animal à assurer</span>
       </template>
     </field>
   </div>
@@ -39,10 +39,10 @@
 import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 import { createHelpers } from 'vuex-map-fields'
+import Heading from '../../components/Heading.vue'
+import Field from '../../components/Field.vue'
 import RadioGroup from '../../components/RadioGroup.vue'
 import RadioButton from '../../components/RadioButton.vue'
-import Field from '../../components/Field.vue'
-import Heading from '../../components/Heading.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'quote/getField',
@@ -51,10 +51,10 @@ const { mapFields } = createHelpers({
 
 export default {
   components: {
+    Heading,
+    Field,
     RadioGroup,
     RadioButton,
-    Field,
-    Heading,
   },
 
   emits: ['nextStep'],
@@ -64,12 +64,12 @@ export default {
   },
 
   computed: {
-    ...mapFields(['witchPet']),
+    ...mapFields(['pet.whichPet']),
   },
 
   validations() {
     return {
-      witchPet: { required },
+      whichPet: { required },
     }
   },
 
