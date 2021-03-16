@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-flow-col space-x-4">
+  <div class="md:grid grid-flow-col md:gap-x-4">
     <slot />
   </div>
 </template>
