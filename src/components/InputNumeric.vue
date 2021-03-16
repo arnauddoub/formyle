@@ -1,10 +1,5 @@
 <template>
-  <input
-    v-model="displayValue"
-    type="tel"
-    class="block p-4 w-full text-lg appearance-none focus:outline-none bg-transparent"
-    placeholder=" "
-  />
+  <input v-model="displayValue" type="tel" placeholder=" " />
 </template>
 
 <script>

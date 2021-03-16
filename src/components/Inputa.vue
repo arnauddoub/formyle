@@ -1,18 +1,37 @@
 <template>
-  <input
-    type="text"
-    class="block p-4 w-full text-lg appearance-none focus:outline-none bg-transparent"
-    placeholder=" "
-  />
+  <input :id="id" v-model="displayValue" :name="name" type="text" placeholder=" " />
 </template>
 
 <script>
+import { computed } from 'vue'
+
 export default {
   props: {
-    modalValue: {
+    modelValue: {
       type: [String, Number],
       default: null,
     },
+    id: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+  },
+
+  emits: ['update:modelValue'],
+
+  setup(props, { emit }) {
+    const displayValue = computed({
+      get: () => props.modelValue,
+      set: (value) => emit('update:modelValue', value),
+    })
+
+    return {
+      displayValue,
+    }
   },
 }
 </script>

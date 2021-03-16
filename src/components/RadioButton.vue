@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1">
+  <div class="radio-button flex-1" :class="size">
     <input
       :id="id"
       v-model="displayValue"
@@ -9,7 +9,7 @@
       class="absolute appearance-none -z-1 w-0 h-0"
       @click="handleClick"
     />
-    <label :for="id" :class="{ 'bg-red-100 border-red-300': error }" class="radio-button">
+    <label :for="id" :class="{ 'bg-red-50 border-red-300': error }">
       <slot />
     </label>
   </div>
@@ -21,7 +21,7 @@ import { computed } from 'vue'
 export default {
   props: {
     modelValue: {
-      type: String,
+      type: [String, Number],
       default: null,
     },
     id: {
@@ -33,12 +33,19 @@ export default {
       required: true,
     },
     value: {
-      type: String,
-      default: null,
+      type: [String, Number],
+      required: true,
     },
     error: {
       type: Boolean,
       default: false,
+    },
+    size: {
+      type: String,
+      default: 'md',
+      validator: function (value) {
+        return ['md', 'lg'].indexOf(value) !== -1
+      },
     },
   },
 
@@ -64,10 +71,13 @@ export default {
 </script>
 
 <style scoped>
-.radio-button {
-  @apply cursor-pointer h-40 rounded-md border-2 flex items-center justify-center select-none duration-300 hover:bg-blue-50 hover:border-blue-400 flex-col;
+.radio-button label {
+  @apply cursor-pointer rounded-md border-2 flex justify-center select-none duration-300 hover:bg-blue-50 hover:border-blue-400 flex-col py-3 px-4;
 }
-input[type='radio']:checked + label {
+.radio-button.lg label {
+  @apply h-40 items-center;
+}
+.radio-button input:checked + label {
   @apply border-blue-400 bg-blue-50;
 }
 </style>
