@@ -2,7 +2,14 @@ import { getField, updateField } from 'vuex-map-fields'
 
 // initial state
 const state = () => ({
-  witchPet: null,
+  pet: {
+    whichPet: null,
+    breed: null,
+    name: null,
+    yearsOld: null,
+    gender: null,
+    identified: null,
+  },
   phone: null,
   email: null,
   tests: [
