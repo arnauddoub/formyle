@@ -10,6 +10,11 @@ const state = () => ({
     gender: null,
     identified: null,
   },
+  customer: {
+    civility: null,
+    lastName: null,
+    firstName: null,
+  },
   phone: null,
   email: null,
   tests: [
