@@ -15,14 +15,6 @@ const state = () => ({
     lastName: null,
     firstName: null,
   },
-  phone: null,
-  email: null,
-  tests: [
-    {
-      email: null,
-      address: null,
-    },
-  ],
 })
 
 // getters
