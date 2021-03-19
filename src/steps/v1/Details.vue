@@ -1,10 +1,10 @@
 <template>
   <div>
-    <heading :size="3">Votre compagnon</heading>
+    <heading :size="3">Dites-nous en plus sur votre {{ animals[whichPet] }}...</heading>
     <field label="Quelle est sa race ?" :error="v$.breed.$error">
       <selecta id="pet_breed" v-model="breed" name="pet_breed">
         <option selected />
-        <option v-for="(breed, key) in breeds" :key="key" :value="key">{{ breed }}</option>
+        <option v-for="(breed, key) in breeds[whichPet]" :key="key" :value="key">{{ breed }}</option>
       </selecta>
       <template v-if="v$.breed.$error" #error>
         <span v-if="v$.breed.required">Veuillez sélectionner une race</span>
@@ -32,7 +32,7 @@
 import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 import { createHelpers } from 'vuex-map-fields'
-import { breeds, years } from './data'
+import { breeds, years, animals } from './data'
 import Field from '../../components/Field.vue'
 import Heading from '../../components/Heading.vue'
 import Inputa from '../../components/Inputa.vue'
@@ -59,11 +59,12 @@ export default {
     return {
       breeds,
       years,
+      animals,
     }
   },
 
   computed: {
-    ...mapFields(['pet.breed', 'pet.name', 'pet.yearsOld']),
+    ...mapFields(['pet.whichPet', 'pet.breed', 'pet.name', 'pet.yearsOld']),
   },
 
   validations() {

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <heading :size="3">Quel animal souhaitez-vous assurer ?</heading>
+    <heading :size="3">C'est parti ! Quel animal souhaitez-vous assurer ?</heading>
     <field type="radio">
       <radio-group>
         <radio-button
           id="which_pet-chien"
           v-model="whichPet"
           name="which_pet"
-          value="chien"
+          value="dog"
           :error="v$.whichPet.$error"
           size="lg"
           @change="$emit('nextStep')"
@@ -19,7 +19,7 @@
           id="which_pet-chat"
           v-model="whichPet"
           name="which_pet"
-          value="chat"
+          value="cat"
           :error="v$.whichPet.$error"
           size="lg"
           @change="$emit('nextStep')"
