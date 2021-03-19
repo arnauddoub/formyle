@@ -2,21 +2,21 @@
   <div class="flex justify-between mt-10">
     <button
       v-if="currentStepIndex > 0"
-      class="px-10 py-3 border-2 border-blue-500 text-blue-500 rounded-md focus:outline-none select-none"
+      class="px-10 py-3 border-2 border-alpha text-alpha rounded-md focus:outline-none select-none"
       @click="prevStep"
     >
       Précédent
     </button>
     <button
       v-if="currentStepIndex < steps.length - 1"
-      class="ml-auto px-10 py-3 bg-blue-500 text-white rounded-md focus:outline-none select-none"
+      class="ml-auto px-10 py-3 bg-alpha text-white rounded-md focus:outline-none select-none"
       @click="$emit('validateStep')"
     >
       Suivant
     </button>
     <button
       v-else
-      class="px-10 py-3 bg-blue-500 text-white rounded-md focus:outline-none select-none"
+      class="px-10 py-3 bg-alpha text-white rounded-md focus:outline-none select-none"
       @click="$emit('onComplete')"
     >
       Comparer

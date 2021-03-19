@@ -4,7 +4,7 @@
       <div class="block text-lg text-gray-500 leading-none mb-1">{{ label }}</div>
       <slot />
     </div>
-    <div v-else class="relative border-2 rounded-md focus-within:border-blue-500">
+    <div v-else class="relative border-2 rounded-md focus-within:border-alpha">
       <slot />
       <label v-if="label" class="absolute top-0 text-lg bg-white px-4 py-3 -z-1 duration-300 origin-0 text-gray-500">
         {{ label }}
@@ -50,6 +50,6 @@ export default {
 }
 .field input:focus-within ~ label,
 .field select:focus-within ~ label {
-  @apply text-blue-500;
+  @apply text-alpha;
 }
 </style>

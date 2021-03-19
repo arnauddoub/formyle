@@ -9,6 +9,10 @@ module.exports = {
       zIndex: {
         '-1': '-1',
       },
+      colors: {
+        alpha: 'var(--alpha)',
+        beta: 'var(--beta)',
+      },
     },
   },
   variants: {

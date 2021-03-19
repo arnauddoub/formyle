@@ -1,7 +1,7 @@
 <template>
   <div class="text-center mb-10 relative">
     <div class="absolute bottom-2 w-full h-1 bg-gray-200">
-      <div class="bg-blue-500 h-full" :style="{ width: width + '%' }" />
+      <div class="bg-alpha h-full duration-300" :style="{ width: width + '%' }" />
     </div>
     <ul class="flex">
       <li
@@ -92,12 +92,12 @@ export default {
 <style scoped>
 .category:after {
   content: '';
-  @apply absolute bottom-0 -right-2.5 w-5 h-5 rounded-full bg-white border-2 border-gray-200;
+  @apply absolute bottom-0 -right-2.5 w-5 h-5 rounded-full bg-white border-2 border-gray-200 duration-300;
 }
 .category:last-child:after {
   @apply right-0;
 }
 .category.active:after {
-  @apply bg-blue-500;
+  @apply bg-alpha border-alpha;
 }
 </style>
