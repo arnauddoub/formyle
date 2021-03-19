@@ -65,10 +65,14 @@ export default {
     validateStep() {
       if (typeof this.$refs.step.validate !== 'function' || this.$refs.step.validate()) {
         this.$refs.navigation.nextStep()
+        return true
       }
+      return false
     },
     submit() {
-      alert(JSON.stringify(this.quote))
+      if (this.validateStep()) {
+        alert(JSON.stringify(this.quote))
+      }
     },
   },
 }
