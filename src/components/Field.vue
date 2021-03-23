@@ -1,12 +1,12 @@
 <template>
   <div class="field mb-4" :class="{ error }">
     <div v-if="type === 'radio'">
-      <div class="block text-lg text-gray-500 leading-none mb-1">{{ label }}</div>
+      <div class="block text-gray-500 leading-none mb-2">{{ label }}</div>
       <slot />
     </div>
     <div v-else class="relative border-2 rounded-md focus-within:border-alpha">
       <slot />
-      <label v-if="label" class="absolute top-0 text-lg bg-white px-4 py-3 -z-1 duration-300 origin-0 text-gray-500">
+      <label v-if="label" class="absolute top-0 bg-white px-4 py-3 -z-1 duration-300 origin-0 text-gray-500">
         {{ label }}
       </label>
     </div>
@@ -38,7 +38,7 @@ export default {
 <style scoped>
 .field input,
 .field select {
-  @apply block px-4 py-3 w-full text-lg appearance-none focus:outline-none bg-transparent;
+  @apply block px-4 py-3 w-full appearance-none focus:outline-none bg-transparent;
 }
 .field.error > .relative {
   @apply border-red-300;
