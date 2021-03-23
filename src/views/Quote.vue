@@ -51,14 +51,21 @@ export default {
 
   beforeCreate() {
     let version = this.$route.path.split('/')[2]
+    // Force default version
     if (typeof version === 'undefined' || version === '') {
       version = Object.keys(steps)[0]
       this.$router.push({ name: version + steps[version][0].name })
     }
+
     const stepsSelected = steps[version]
+    // Force start to the first step
+    if (version + stepsSelected[0].name !== this.$route.name) {
+      this.$router.push({ name: version + stepsSelected[0].name })
+    }
+
     this.$store.commit('steps/addVersion', version)
     this.$store.commit('steps/addSteps', stepsSelected)
-    this.$store.commit('steps/changeStepIndexByRoute', this.$route.name)
+    this.$store.commit('steps/changeStepIndexByRoute', version + stepsSelected[0].name)
   },
 
   methods: {
