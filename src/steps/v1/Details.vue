@@ -1,6 +1,6 @@
 <template>
   <div>
-    <heading :size="3">Dites-nous en plus sur votre {{ animals[whichPet] }}...</heading>
+    <heading :size="3" :center="true">Dites-nous en plus sur votre {{ animals[whichPet] }}...</heading>
     <field label="Quelle est sa race ?" :error="v$.breed.$error">
       <selecta id="pet_breed" v-model="breed" name="pet_breed">
         <option selected />

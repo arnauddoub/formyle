@@ -1,6 +1,6 @@
 <template>
   <div>
-    <heading :size="3">Dernières questions sur {{ name }}. Promis !</heading>
+    <heading :size="3" :center="true">Dernières questions sur {{ name }}. Promis !</heading>
     <field label="Quel est son sexe ?" :error="v$.gender.$error" type="radio">
       <radio-group>
         <radio-button id="pet_gender-male" v-model="gender" name="pet_gender" value="male">Mâle</radio-button>

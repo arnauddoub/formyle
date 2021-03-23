@@ -1,6 +1,6 @@
 <template>
   <div>
-    <heading :size="3">Parfait ! Obtenez votre devis...</heading>
+    <heading :size="3" :center="true">Parfait ! Obtenez votre devis...</heading>
     <field label="Votre nom" :error="v$.lastName.$error">
       <inputa id="last_name" v-model="lastName" name="last_name" />
       <template v-if="v$.lastName.$error" #error>
