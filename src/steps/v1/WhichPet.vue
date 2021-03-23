@@ -13,7 +13,7 @@
           @change="$emit('nextStep')"
         >
           <img src="../../assets/dog.svg" alt="dog" width="60" height="60" />
-          <div class="mt-2 text-lg">Chien</div>
+          <div class="mt-2">Chien</div>
         </radio-button>
         <radio-button
           id="which_pet-chat"
@@ -25,7 +25,7 @@
           @change="$emit('nextStep')"
         >
           <img src="../../assets/cat.svg" alt="cat" width="60" height="60" />
-          <div class="mt-2 text-lg">Chat</div>
+          <div class="mt-2">Chat</div>
         </radio-button>
       </radio-group>
       <template v-if="v$.whichPet.$error" #error>
