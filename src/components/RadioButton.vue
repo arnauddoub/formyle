@@ -72,12 +72,48 @@ export default {
 
 <style scoped>
 .radio-button label {
-  @apply cursor-pointer rounded-md border-2 flex justify-center select-none duration-300 hover:bg-blue-50 hover:border-blue-400 flex-col py-3 px-4;
+  @apply cursor-pointer rounded-md border-2 block select-none duration-300 hover:bg-beta hover:border-alpha py-3 px-4;
 }
 .radio-button.lg label {
-  @apply h-40 items-center;
+  @apply h-40 items-center flex justify-center flex-col;
 }
 .radio-button input:checked + label {
-  @apply border-blue-400 bg-blue-50;
+  @apply border-alpha bg-beta;
+}
+
+.radio-button.md label {
+  @apply relative pl-14;
+}
+.radio-button.md label:before,
+.radio-button.md label:after {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  transition: all 0.2s linear;
+  transform-origin: center;
+  border-radius: 50%;
+}
+.radio-button.md label:before {
+  top: 14px;
+  left: 14px;
+  border: 1px solid #cac2d5;
+}
+.radio-button.md label:after {
+  top: 20px;
+  left: 20px;
+  border: 5px solid #fff;
+  width: 12px;
+  height: 12px;
+}
+.radio-button input:checked + label:after {
+  @apply bg-alpha;
+  border: 4px solid #fff;
+  background-clip: padding-box;
+  top: 17px;
+  left: 17px;
+  width: 18px;
+  height: 18px;
 }
 </style>
