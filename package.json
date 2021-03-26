@@ -18,7 +18,7 @@
     "vuex-map-fields": "^1.4.1"
   },
   "devDependencies": {
-    "@tailwindcss/jit": "^0.1.8",
+    "@tailwindcss/jit": "^0.1.10",
     "@vitejs/plugin-vue": "^1.1.5",
     "@vue/compiler-sfc": "^3.0.7",
     "autoprefixer": "^10.2.5",
