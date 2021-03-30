@@ -21,6 +21,7 @@ const routes = [
     name: 'Quote',
     component: () => import(/* webpackChunkName: "quote" */ '@/views/Quote.vue'),
     children: getStepsRoutes(),
+    redirect: { name: 'v1Start' },
   },
   {
     path: '/:pathMatch(.*)*',
