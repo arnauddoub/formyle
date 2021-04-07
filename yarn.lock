@@ -1119,6 +1119,11 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.4"
 
+maska@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/maska/-/maska-1.4.1.tgz#6a90215f1f23045c56daa4eeb1a2d706bbe66a95"
+  integrity sha512-AHbT0+guyN8Dfzm9mex15LbqsG+L4QT8lWHu2HwRP0L77Bbzn6UXv3ARWSyJtACd/6VgTMs7AOFDV4aVh2oU+A==
+
 merge-source-map@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/merge-source-map/-/merge-source-map-1.1.0.tgz"
