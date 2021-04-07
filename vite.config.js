@@ -6,7 +6,9 @@ import path from 'path'
  */
 export default {
   plugins: [vue()],
-  alias: {
-    '@': path.resolve(__dirname, '/src'),
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, '/src'),
+    },
   },
 }
