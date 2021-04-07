@@ -13,7 +13,7 @@ const state = () => ({
   customer: {
     lastName: null,
     firstName: null,
-    birthdate: null,
+    birthDate: null,
     email: null,
   },
 })

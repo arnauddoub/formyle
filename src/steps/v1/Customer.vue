@@ -13,10 +13,10 @@
         <span v-if="v$.firstName.required">Veuillez indiquer votre prénom</span>
       </template>
     </field>
-    <field label="Votre date de naissance" :error="v$.birthdate.$error">
-      <inputa id="birthdate" v-model="birthdate" name="birthdate" />
-      <template v-if="v$.birthdate.$error" #error>
-        <span v-if="v$.birthdate.required">Veuillez indiquer votre date de naissance</span>
+    <field label="Votre date de naissance" :error="v$.birthDate.$error">
+      <birth-date id="birthDate" v-model="birthDate" name="birthDate" />
+      <template v-if="v$.birthDate.$error" #error>
+        <span v-if="v$.birthDate.required">Veuillez indiquer votre date de naissance</span>
       </template>
     </field>
     <field label="Votre email" :error="v$.email.$error">
@@ -30,12 +30,12 @@
 
 <script>
 import useVuelidate from '@vuelidate/core'
-import { required } from '@vuelidate/validators'
+import { required, email } from '@vuelidate/validators'
 import { createHelpers } from 'vuex-map-fields'
 import Field from '../../components/Field.vue'
 import Heading from '../../components/Heading.vue'
 import Inputa from '../../components/Inputa.vue'
-import { email } from '@vuelidate/validators'
+import BirthDate from '../../components/BirthDate.vue'
 
 const { mapFields } = createHelpers({
   getterType: 'quote/getField',
@@ -44,6 +44,7 @@ const { mapFields } = createHelpers({
 
 export default {
   components: {
+    BirthDate,
     Inputa,
     Field,
     Heading,
@@ -54,14 +55,14 @@ export default {
   },
 
   computed: {
-    ...mapFields(['customer.lastName', 'customer.firstName', 'customer.birthdate', 'customer.email']),
+    ...mapFields(['customer.lastName', 'customer.firstName', 'customer.birthDate', 'customer.email']),
   },
 
   validations() {
     return {
       lastName: { required },
       firstName: { required },
-      birthdate: { required },
+      birthDate: { required },
       email: { required, email },
     }
   },
