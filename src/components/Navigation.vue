@@ -2,6 +2,7 @@
   <div class="flex justify-between mt-10">
     <button
       v-if="currentStepIndex > 0"
+      type="button"
       class="px-10 py-3 border-2 border-alpha text-alpha rounded-md focus:outline-none select-none"
       @click="prevStep"
     >
@@ -9,6 +10,7 @@
     </button>
     <button
       v-if="currentStepIndex < steps.length - 1"
+      type="button"
       class="ml-auto px-10 py-3 bg-alpha text-white rounded-md focus:outline-none select-none"
       @click="$emit('validateStep')"
     >
@@ -16,6 +18,7 @@
     </button>
     <button
       v-else
+      type="button"
       class="px-10 py-3 bg-alpha text-white rounded-md focus:outline-none select-none"
       @click="$emit('onComplete')"
     >
