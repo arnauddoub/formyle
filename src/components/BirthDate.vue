@@ -4,7 +4,7 @@
       v-for="(item, index) in birthDate"
       :key="index"
       class="border border-t-0 border-b-0 flex-1"
-      :class="{ 'flex-1 hidden': ['month', 'year'].includes(index) }"
+      :class="{ hidden: ['month', 'year'].includes(index) }"
     >
       <input
         :id="`${id}-${index}`"
@@ -30,8 +30,8 @@ import { ref, reactive, watch } from 'vue'
 export default {
   props: {
     modelValue: {
-      type: [String, Number],
-      default: null,
+      type: String,
+      required: true,
     },
     id: {
       type: String,
@@ -46,6 +46,10 @@ export default {
   emits: ['update:modelValue'],
 
   setup(props, { emit }) {
+    const splitSlash = (value, index) => {
+      return value ? value.split('/')[index] : ''
+    }
+
     const birthDate = reactive({
       day: {
         ref: null,
@@ -68,14 +72,29 @@ export default {
     })
 
     const active = ref(false)
+    const displayValue = ref('')
+
+    watch(
+      () => props.modelValue,
+      (newValue) => {
+        if (newValue !== displayValue.value) {
+          birthDate.day.value = splitSlash(newValue, 0)
+          birthDate.month.value = splitSlash(newValue, 1)
+          birthDate.year.value = splitSlash(newValue, 2)
+        }
+      },
+      { immediate: true },
+    )
 
     watch(
       () => [birthDate.day.value, birthDate.month.value, birthDate.year.value],
       () => {
-        emit(
-          'update:modelValue',
-          `${birthDate.day.value.padStart(2, '0')}/${birthDate.month.value.padStart(2, '0')}/${birthDate.year.value}`,
-        )
+        displayValue.value = `${birthDate.day.value.padStart(2, '0')}/${birthDate.month.value.padStart(2, '0')}/${
+          birthDate.year.value
+        }`
+        if (displayValue.value !== props.modelValue) {
+          emit('update:modelValue', displayValue.value)
+        }
       },
     )
 
