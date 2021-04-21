@@ -11,7 +11,7 @@
       </template>
     </field>
     <field label="Quel est son nom ?" :error="v$.name.$error">
-      <inputa id="pet_name" v-model="name" name="pet_name" />
+      <inputa id="pet_name" v-model.trim="name" name="pet_name" />
       <template v-if="v$.name.$error" #error>
         <span v-if="v$.name.required">Veuillez indiquer son nom</span>
       </template>

@@ -2,13 +2,13 @@
   <div>
     <heading :size="3" :center="true">Parfait ! Obtenez votre devis...</heading>
     <field label="Votre nom" :error="v$.lastName.$error">
-      <inputa id="last_name" v-model="lastName" name="last_name" />
+      <inputa id="last_name" v-model.trim="lastName" name="last_name" />
       <template v-if="v$.lastName.$error" #error>
         <span v-if="v$.lastName.required">Veuillez indiquer votre nom</span>
       </template>
     </field>
     <field label="Votre prénom" :error="v$.firstName.$error">
-      <inputa id="first_name" v-model="firstName" name="first_name" />
+      <inputa id="first_name" v-model.trim="firstName" name="first_name" />
       <template v-if="v$.firstName.$error" #error>
         <span v-if="v$.firstName.required">Veuillez indiquer votre prénom</span>
       </template>
@@ -20,7 +20,7 @@
       </template>
     </field>
     <field label="Votre email" :error="v$.email.$error">
-      <inputa id="email" v-model="email" name="email" />
+      <inputa id="email" v-model.trim="email" name="email" />
       <template v-if="v$.email.$error" #error>
         <span v-if="v$.email.required">Veuillez indiquer votre email</span>
       </template>
