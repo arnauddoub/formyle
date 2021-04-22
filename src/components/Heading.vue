@@ -23,7 +23,7 @@ export default {
   computed: {
     headingClass() {
       return {
-        'mb-5': true,
+        'mb-5 font-medium text-gray-800': true,
         'text-center': this.center,
       }
     },
