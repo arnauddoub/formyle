@@ -72,7 +72,7 @@ export default {
 
 <style scoped>
 .radio-button label {
-  @apply cursor-pointer rounded-md border-2 block select-none duration-300 hover:bg-beta hover:border-alpha py-3 px-4;
+  @apply cursor-pointer rounded-md border border-gray-300 block select-none duration-300 hover:bg-beta hover:border-alpha py-3 px-4;
 }
 .radio-button.lg label {
   @apply h-40 items-center flex justify-center flex-col;
