@@ -3,15 +3,18 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
-      transformOrigin: {
-        0: '0%',
+      colors: {
+        alpha: 'var(--alpha)',
+        beta: 'var(--beta)',
       },
       zIndex: {
         '-1': '-1',
       },
-      colors: {
-        alpha: 'var(--alpha)',
-        beta: 'var(--beta)',
+      transformOrigin: {
+        0: '0%',
+      },
+      translate: {
+        '3.5/7': '50%',
       },
     },
   },

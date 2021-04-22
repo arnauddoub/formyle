@@ -1,8 +1,6 @@
 <template>
   <div>
-    <heading :size="3" :center="true">
-      <span role="img" aria-label="décollage">🚀</span> C'est parti ! Quel animal souhaitez-vous assurer ?
-    </heading>
+    <heading :size="3" :center="true">C'est parti ! Quel animal souhaitez-vous assurer ?</heading>
     <field type="radio">
       <radio-group>
         <radio-button

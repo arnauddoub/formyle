@@ -1,5 +1,5 @@
 <template>
-  <div class="field mb-4" :class="{ error }">
+  <div class="field mb-5" :class="{ error }">
     <div v-if="type === 'radio'">
       <div class="block text-gray-500 leading-none mb-2">{{ label }}</div>
       <slot />
@@ -47,7 +47,7 @@ export default {
 .field .input:not(:placeholder-shown) ~ label,
 .field .input-group.active ~ label,
 .field select.active ~ label {
-  @apply transform scale-75 -translate-y-4 z-0 ml-3 px-1 py-0;
+  @apply transform scale-75 -translate-y-3.5 z-0 ml-3 px-1 py-0;
 }
 .field .input:focus-within ~ label,
 .field select:focus-within ~ label {
