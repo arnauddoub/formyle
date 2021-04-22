@@ -3,9 +3,10 @@
     <button
       v-if="currentStepIndex > 0"
       type="button"
-      class="px-10 py-3 border-2 border-alpha text-alpha rounded-md focus:outline-none select-none"
+      class="flex items-center select-none focus:outline-none"
       @click="prevStep"
     >
+      <arrow-left-icon class="h-5 w-5 mr-2" />
       Précédent
     </button>
     <button
@@ -28,7 +29,13 @@
 </template>
 
 <script>
+import { ArrowLeftIcon } from '@heroicons/vue/solid'
+
 export default {
+  components: {
+    ArrowLeftIcon,
+  },
+
   emits: ['onComplete', 'validateStep'],
 
   computed: {
