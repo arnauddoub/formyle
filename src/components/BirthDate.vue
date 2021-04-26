@@ -74,30 +74,6 @@ export default {
     const active = ref(false)
     const displayValue = ref('')
 
-    watch(
-      () => props.modelValue,
-      (newValue) => {
-        if (newValue !== displayValue.value) {
-          birthDate.day.value = splitSlash(newValue, 0)
-          birthDate.month.value = splitSlash(newValue, 1)
-          birthDate.year.value = splitSlash(newValue, 2)
-        }
-      },
-      { immediate: true },
-    )
-
-    watch(
-      () => [birthDate.day.value, birthDate.month.value, birthDate.year.value],
-      () => {
-        displayValue.value = `${birthDate.day.value.padStart(2, '0')}/${birthDate.month.value.padStart(2, '0')}/${
-          birthDate.year.value
-        }`
-        if (displayValue.value !== props.modelValue) {
-          emit('update:modelValue', displayValue.value)
-        }
-      },
-    )
-
     const toggleFocus = (input, status) => {
       birthDate[input].isFocused = status
       setTimeout(() => {
@@ -123,6 +99,31 @@ export default {
         }
       }
     }
+
+    watch(
+      () => props.modelValue,
+      (newValue) => {
+        if (newValue !== displayValue.value) {
+          birthDate.day.value = splitSlash(newValue, 0)
+          birthDate.month.value = splitSlash(newValue, 1)
+          birthDate.year.value = splitSlash(newValue, 2)
+          if (birthDate.day.value && birthDate.month.value && birthDate.year.value) {
+            active.value = true
+          }
+        }
+      },
+      { immediate: true },
+    )
+
+    watch(
+      () => [birthDate.day.value, birthDate.month.value, birthDate.year.value],
+      () => {
+        displayValue.value = `${birthDate.day.value}/${birthDate.month.value}/${birthDate.year.value}`
+        if (displayValue.value !== props.modelValue) {
+          emit('update:modelValue', displayValue.value)
+        }
+      },
+    )
 
     return {
       active,
