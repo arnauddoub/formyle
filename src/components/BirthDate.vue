@@ -1,10 +1,10 @@
 <template>
-  <div class="flex input-group" :class="{ active }">
+  <div class="flex input-group w-full" :class="{ active }">
     <div
       v-for="(item, index) in birthDate"
       :key="index"
-      class="border border-t-0 border-b-0 flex-1"
-      :class="{ hidden: ['month', 'year'].includes(index) }"
+      class="flex-1"
+      :class="{ 'hidden border-l': ['month', 'year'].includes(index) }"
     >
       <input
         :id="`${id}-${index}`"
@@ -136,7 +136,7 @@ export default {
 </script>
 
 <style scoped>
-.active .border {
+.active > .hidden {
   @apply block;
 }
 .active .input {

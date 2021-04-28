@@ -21,6 +21,7 @@
     </field>
     <field label="Votre email" :error="v$.email.$error">
       <inputa id="email" v-model.trim="email" name="email" />
+      <template #icon><at-symbol-icon /></template>
       <template v-if="v$.email.$error" #error>
         <span v-if="v$.email.required">Veuillez indiquer votre email</span>
       </template>
@@ -32,10 +33,13 @@
 import useVuelidate from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 import { createHelpers } from 'vuex-map-fields'
+
 import Field from '../../components/Field.vue'
 import Heading from '../../components/Heading.vue'
 import Inputa from '../../components/Inputa.vue'
 import BirthDate from '../../components/BirthDate.vue'
+
+import { AtSymbolIcon } from '@heroicons/vue/outline'
 
 const { mapFields } = createHelpers({
   getterType: 'quote/getField',
@@ -48,6 +52,7 @@ export default {
     Inputa,
     Field,
     Heading,
+    AtSymbolIcon,
   },
 
   setup() {

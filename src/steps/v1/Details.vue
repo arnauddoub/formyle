@@ -33,6 +33,7 @@ import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 import { createHelpers } from 'vuex-map-fields'
 import { breeds, years, animals } from './data'
+
 import Field from '../../components/Field.vue'
 import Heading from '../../components/Heading.vue'
 import Inputa from '../../components/Inputa.vue'
