@@ -118,7 +118,11 @@ export default {
     watch(
       () => [birthDate.day.value, birthDate.month.value, birthDate.year.value],
       () => {
-        displayValue.value = `${birthDate.day.value}/${birthDate.month.value}/${birthDate.year.value}`
+        if (birthDate.day.value || birthDate.month.value || birthDate.year.value) {
+          displayValue.value = `${birthDate.day.value}/${birthDate.month.value}/${birthDate.year.value}`
+        } else {
+          displayValue.value = ''
+        }
         if (displayValue.value !== props.modelValue) {
           emit('update:modelValue', displayValue.value)
         }
