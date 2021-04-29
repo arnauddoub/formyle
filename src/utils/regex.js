@@ -1,4 +1,4 @@
-export function stipSpace(str) {
+export function stripSpace(str) {
   return str.replace(/\s/g, '')
 }
 
