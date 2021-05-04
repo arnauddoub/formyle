@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jest: true,
   },
   extends: ['plugin:vue/vue3-recommended', 'eslint:recommended', 'prettier'],
   plugins: ['prettier'],
