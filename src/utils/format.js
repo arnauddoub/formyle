@@ -11,7 +11,7 @@ export function formatEUR(number) {
  * @returns {string}
  */
 export function readableNumber(number) {
-  return number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : number
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
 }
 
 /**
