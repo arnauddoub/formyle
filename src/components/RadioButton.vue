@@ -7,7 +7,6 @@
       :value="value"
       type="radio"
       class="absolute appearance-none -z-1 w-0 h-0"
-      @click="handleClick"
     />
     <label :for="id" :class="{ 'bg-red-50 border-red-300': error }">
       <slot />
@@ -49,7 +48,7 @@ export default {
     },
   },
 
-  emits: ['update:modelValue', 'click'],
+  emits: ['update:modelValue'],
 
   setup(props, { emit }) {
     const displayValue = computed({
@@ -60,12 +59,6 @@ export default {
     return {
       displayValue,
     }
-  },
-
-  methods: {
-    handleClick() {
-      this.$emit('click')
-    },
   },
 }
 </script>
