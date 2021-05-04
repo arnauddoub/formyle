@@ -11,5 +11,6 @@ describe('Utils:format', () => {
 
   it('stripFirstZero', () => {
     expect(stripFirstZero('0100')).toBe('100')
+    expect(stripFirstZero('0')).toBe('0')
   })
 })
