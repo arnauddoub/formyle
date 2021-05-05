@@ -1,5 +1,5 @@
 {
-  "name": "@arnauddoub/formyle",
+  "name": "formyle",
   "version": "0.0.0",
   "description": "Advanced Vue 3 form conception",
   "scripts": {
@@ -56,8 +56,5 @@
     "prettier": "^2.2.1",
     "vite": "^2.2.4",
     "vue-jest": "^5.0.0-alpha.7"
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
   }
 }
