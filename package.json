@@ -1,5 +1,5 @@
 {
-  "name": "formyle",
+  "name": "@arnauddoub/formyle",
   "version": "0.0.0",
   "description": "Advanced Vue 3 form conception",
   "scripts": {
