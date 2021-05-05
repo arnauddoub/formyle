@@ -1,13 +1,27 @@
 {
   "name": "formyle",
   "version": "0.0.0",
-  "license": "MIT",
+  "description": "Advanced Vue 3 form conception",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint --fix --ext .js,.vue src",
     "test": "npm run test:unit",
     "test:unit": "jest test/unit"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue3",
+    "vite",
+    "form",
+    "form-builder"
+  ],
+  "author": "Arnaud Doubremelle",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arnauddoub/formyle.git"
   },
   "dependencies": {
     "@headlessui/vue": "^1.1.1",
@@ -42,5 +56,8 @@
     "prettier": "^2.2.1",
     "vite": "^2.2.4",
     "vue-jest": "^5.0.0-alpha.7"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@dalenguyen"
   }
 }
