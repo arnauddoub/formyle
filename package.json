@@ -58,6 +58,6 @@
     "vue-jest": "^5.0.0-alpha.7"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@arnauddoub"
+    "registry":"https://npm.pkg.github.com"
   }
 }
