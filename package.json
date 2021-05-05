@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint --fix --ext .js,.vue src",
+    "test": "npm run test:unit",
     "test:unit": "jest test/unit"
   },
   "dependencies": {
