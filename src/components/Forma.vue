@@ -7,13 +7,14 @@
           <component :is="Component" ref="step" />
         </transition>
       </router-view>
-      <navigation ref="navigation" @onComplete="validateStep() && $emit('submit')" @validateStep="validateStep" />
+      <navigation ref="navigation" @onComplete="validateStep() && $emit('save')" @validateStep="validateStep" />
     </form>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+
 import Categories from '../components/Categories.vue'
 import Navigation from '../components/Navigation.vue'
 
@@ -23,12 +24,6 @@ export default {
     Navigation,
   },
 
-  beforeRouteUpdate(to, from) {
-    const toDepth = this.steps.findIndex((element) => this.version + element.name === to.name)
-    const fromDepth = this.steps.findIndex((element) => this.version + element.name === from.name)
-    to.meta.transitionName = toDepth < fromDepth ? 'page-left' : 'page-right'
-  },
-
   props: {
     allSteps: {
       type: Object,
@@ -36,7 +31,7 @@ export default {
     },
   },
 
-  emits: ['submit'],
+  emits: ['save'],
 
   computed: {
     ...mapState({
@@ -73,6 +68,12 @@ export default {
         return true
       }
       return false
+    },
+
+    transition(to, from) {
+      const toDepth = this.steps.findIndex((element) => this.version + element.name === to.name)
+      const fromDepth = this.steps.findIndex((element) => this.version + element.name === from.name)
+      to.meta.transitionName = toDepth < fromDepth ? 'page-left' : 'page-right'
     },
   },
 }

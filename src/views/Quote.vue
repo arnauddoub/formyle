@@ -1,9 +1,8 @@
 <template>
-  <forma ref="form" :all-steps="steps" />
+  <forma ref="form" :all-steps="steps" @save="submit" />
 </template>
 
 <script>
-import { mapState } from 'vuex'
 import { steps } from '../steps'
 import Forma from '../components/Forma.vue'
 
@@ -14,6 +13,10 @@ export default {
     Forma,
   },
 
+  beforeRouteUpdate(to, from) {
+    this.$refs.form.transition(to, from)
+  },
+
   data() {
     return {
       steps: steps,
@@ -21,9 +24,9 @@ export default {
   },
 
   computed: {
-    ...mapState({
-      quote: (state) => state.quote,
-    }),
+    quote() {
+      return this.$store.state.quote
+    },
   },
 
   methods: {
