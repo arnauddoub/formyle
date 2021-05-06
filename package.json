@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
     "lint": "eslint --fix --ext .js,.vue src",
     "test": "npm run test:unit",
     "test:unit": "jest test/unit"
@@ -55,6 +58,7 @@
     "postcss": "^8.2.13",
     "prettier": "^2.2.1",
     "vite": "^2.2.4",
+    "vitepress": "^0.13.2",
     "vue-jest": "^5.0.0-alpha.7"
   }
 }
