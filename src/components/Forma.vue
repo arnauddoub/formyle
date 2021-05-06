@@ -30,7 +30,7 @@ export default {
   },
 
   props: {
-    steps: {
+    allSteps: {
       type: Object,
       required: true,
     },
@@ -40,6 +40,7 @@ export default {
 
   computed: {
     ...mapState({
+      steps: (state) => state.steps.all,
       version: (state) => state.steps.version,
       currentStepIndex: (state) => state.steps.stepIndex,
     }),
@@ -47,7 +48,7 @@ export default {
 
   beforeCreate() {
     let version = this.$route.path.split('/')[2]
-    const stepsSelected = this.steps[version]
+    const stepsSelected = this.allSteps[version]
 
     // Force start to the first step
     if (version + stepsSelected[0].name !== this.$route.name) {

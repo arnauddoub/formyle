@@ -1,5 +1,5 @@
 <template>
-  <forma ref="form" :steps="steps" />
+  <forma ref="form" :all-steps="steps" />
 </template>
 
 <script>
