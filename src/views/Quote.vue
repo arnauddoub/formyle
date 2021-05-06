@@ -1,80 +1,34 @@
 <template>
-  <div class="overflow-hidden">
-    <forma v-if="currentStepIndex !== null && currentStepIndex >= 0" @keyup.enter="validateStep">
-      <categories />
-      <router-view v-slot="{ Component, route }" @nextStep="validateStep">
-        <transition :name="route.meta.transitionName" mode="out-in">
-          <component :is="Component" ref="step" />
-        </transition>
-      </router-view>
-      <Navigation ref="navigation" @onComplete="submit" @validateStep="validateStep" />
-    </forma>
-  </div>
+  <forma ref="form" :steps="steps" />
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import { steps } from '../steps'
 import Forma from '../components/Forma.vue'
-import Categories from '../components/Categories.vue'
-import Navigation from '../components/Navigation.vue'
 
 export default {
   name: 'Quote',
 
   components: {
     Forma,
-    Categories,
-    Navigation,
   },
 
-  beforeRouteUpdate(to, from) {
-    const toDepth = this.steps.findIndex((element) => this.version + element.name === to.name)
-    const fromDepth = this.steps.findIndex((element) => this.version + element.name === from.name)
-    to.meta.transitionName = toDepth < fromDepth ? 'page-left' : 'page-right'
+  data() {
+    return {
+      steps: steps,
+    }
   },
 
   computed: {
     ...mapState({
-      steps: (state) => state.steps.all,
-      version: (state) => state.steps.version,
-      currentStepIndex: (state) => state.steps.stepIndex,
       quote: (state) => state.quote,
     }),
   },
 
-  created() {
-    window.onpopstate = () => {
-      this.$store.commit('steps/changeStepIndexByRoute', this.$route.name)
-    }
-  },
-
-  beforeCreate() {
-    let version = this.$route.path.split('/')[2]
-    const stepsSelected = steps[version]
-
-    // Force start to the first step
-    if (version + stepsSelected[0].name !== this.$route.name) {
-      this.$router.push({ name: version + stepsSelected[0].name })
-    }
-
-    this.$store.commit('steps/addVersion', version)
-    this.$store.commit('steps/addSteps', stepsSelected)
-    this.$store.commit('steps/changeStepIndexByRoute', version + stepsSelected[0].name)
-  },
-
   methods: {
-    validateStep() {
-      if (typeof this.$refs.step.validate !== 'function' || this.$refs.step.validate()) {
-        this.$refs.navigation.nextStep()
-        return true
-      }
-      return false
-    },
     submit() {
-      if (this.validateStep()) {
-        alert(JSON.stringify(this.quote))
-      }
+      alert(JSON.stringify(this.quote))
     },
   },
 }
