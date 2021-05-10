@@ -13,10 +13,6 @@ export default {
     Forma,
   },
 
-  beforeRouteUpdate(to, from) {
-    this.$refs.form.transition(to, from)
-  },
-
   data() {
     return {
       steps: steps,

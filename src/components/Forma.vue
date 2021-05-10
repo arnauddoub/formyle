@@ -41,6 +41,15 @@ export default {
     }),
   },
 
+  watch: {
+    // Transition for step change
+    $route(to, from) {
+      const toDepth = this.steps.findIndex((element) => this.version + element.name === to.name)
+      const fromDepth = this.steps.findIndex((element) => this.version + element.name === from.name)
+      to.meta.transitionName = toDepth < fromDepth ? 'page-left' : 'page-right'
+    },
+  },
+
   beforeCreate() {
     let version = this.$route.path.split('/')[2]
     const stepsSelected = this.allSteps[version]
@@ -56,6 +65,7 @@ export default {
   },
 
   created() {
+    // Trigger history change
     window.onpopstate = () => {
       this.$store.commit('steps/changeStepIndexByRoute', this.$route.name)
     }
@@ -68,12 +78,6 @@ export default {
         return true
       }
       return false
-    },
-
-    transition(to, from) {
-      const toDepth = this.steps.findIndex((element) => this.version + element.name === to.name)
-      const fromDepth = this.steps.findIndex((element) => this.version + element.name === from.name)
-      to.meta.transitionName = toDepth < fromDepth ? 'page-left' : 'page-right'
     },
   },
 }
