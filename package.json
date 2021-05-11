@@ -1,6 +1,6 @@
 {
   "name": "formyle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Advanced Vue 3 form conception",
   "scripts": {
     "dev": "vite",
@@ -25,6 +25,18 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arnauddoub/formyle.git"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "main": "./dist/formyle.umd.js",
+  "module": "./dist/formyle.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/formyle.es.js",
+      "require": "./dist/formyle.umd.js"
+    }
   },
   "dependencies": {
     "@headlessui/vue": "^1.1.1",
