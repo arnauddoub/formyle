@@ -4,7 +4,7 @@
 
 <script>
 import { steps } from '../steps'
-import Forma from '../components/Forma.vue'
+import Forma from '../components/forma'
 
 export default {
   name: 'Quote',

@@ -15,10 +15,11 @@
 <script>
 import { mapState } from 'vuex'
 
-import Categories from '../components/Categories.vue'
-import Navigation from '../components/Navigation.vue'
+import Categories from '../Categories.vue'
+import Navigation from '../Navigation.vue'
 
 export default {
+  name: 'Forma',
   components: {
     Categories,
     Navigation,

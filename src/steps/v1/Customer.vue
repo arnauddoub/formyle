@@ -37,7 +37,7 @@ import { createHelpers } from 'vuex-map-fields'
 import Field from '../../components/Field.vue'
 import Heading from '../../components/Heading.vue'
 import Inputa from '../../components/Inputa.vue'
-import BirthDate from '../../components/BirthDate.vue'
+import BirthDate from '../../components/birth-date'
 
 import { AtSymbolIcon } from '@heroicons/vue/outline'
 
