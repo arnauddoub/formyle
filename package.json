@@ -1,6 +1,6 @@
 {
   "name": "formyle",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Advanced Vue 3 form conception",
   "scripts": {
     "dev": "vite",
