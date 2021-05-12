@@ -1,10 +1,10 @@
-import BirthDate from './components/birth-date'
+// import BirthDate from './components/birth-date'
 import Categories from './components/categories'
 import Forma from './components/forma'
 import Navigation from './components/navigation'
 
 const components = {
-  BirthDate,
+  // BirthDate,
   Categories,
   Forma,
   Navigation,
@@ -18,7 +18,7 @@ function install(Vue) {
 
 export default { install }
 
-export { default as BirthDate } from './components/birth-date'
+// export { default as BirthDate } from './components/birth-date'
 export { default as Categories } from './components/categories'
 export { default as Forma } from './components/forma'
 export { default as Navigation } from './components/navigation'

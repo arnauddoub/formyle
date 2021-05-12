@@ -4457,11 +4457,6 @@ markdown-it@^10.0.0:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-maska@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/maska/-/maska-1.4.1.tgz#6a90215f1f23045c56daa4eeb1a2d706bbe66a95"
-  integrity sha512-AHbT0+guyN8Dfzm9mex15LbqsG+L4QT8lWHu2HwRP0L77Bbzn6UXv3ARWSyJtACd/6VgTMs7AOFDV4aVh2oU+A==
-
 matchit@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/matchit/-/matchit-1.1.0.tgz#c4ccf17d9c824cc1301edbcffde9b75a61d10a7c"
