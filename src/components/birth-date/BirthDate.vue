@@ -29,6 +29,7 @@ import { ref, reactive, watch } from 'vue'
 
 export default {
   name: 'BirthDate',
+
   props: {
     modelValue: {
       type: String,

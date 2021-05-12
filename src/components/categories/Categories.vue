@@ -18,6 +18,8 @@
 
 <script>
 export default {
+  name: 'Categories',
+
   props: {
     steps: {
       type: Object,

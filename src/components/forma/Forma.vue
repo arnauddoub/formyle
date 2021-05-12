@@ -20,16 +20,8 @@
 </template>
 
 <script>
-import Categories from '../Categories.vue'
-import Navigation from '../Navigation.vue'
-
 export default {
   name: 'Forma',
-
-  components: {
-    Categories,
-    Navigation,
-  },
 
   props: {
     allSteps: {

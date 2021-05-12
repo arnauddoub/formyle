@@ -32,6 +32,8 @@
 import { ArrowLeftIcon } from '@heroicons/vue/solid'
 
 export default {
+  name: 'Navigation',
+
   components: {
     ArrowLeftIcon,
   },
