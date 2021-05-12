@@ -1,6 +1,6 @@
 {
   "name": "formyle",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Advanced Vue 3 form conception",
   "scripts": {
     "dev": "vite",
@@ -41,7 +41,8 @@
   "dependencies": {
     "@heroicons/vue": "^1.0.1",
     "tailwindcss": "^2.1.2",
-    "vue": "^3.0.11"
+    "vue": "^3.0.11",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@tailwindcss/jit": "^0.1.18",
