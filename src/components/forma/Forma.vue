@@ -1,25 +1,31 @@
 <template>
   <div v-if="currentStepIndex !== null && currentStepIndex >= 0" class="overflow-hidden" @keyup.enter="validateStep">
     <form class="max-w-2xl mx-auto mt-20 px-4" autocomplete="off" @submit.prevent="">
-      <categories />
+      <categories :steps="steps" :current-step-index="currentStepIndex" />
       <router-view v-slot="{ Component, route }" @nextStep="validateStep">
         <transition :name="route.meta.transitionName" mode="out-in">
           <component :is="Component" ref="step" />
         </transition>
       </router-view>
-      <navigation ref="navigation" @onComplete="validateStep() && $emit('save')" @validateStep="validateStep" />
+      <navigation
+        ref="navigation"
+        v-model:current-step-index="currentStepIndex"
+        :steps="steps"
+        :version="version"
+        @onComplete="validateStep() && $emit('save')"
+        @validateStep="validateStep"
+      />
     </form>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 import Categories from '../Categories.vue'
 import Navigation from '../Navigation.vue'
 
 export default {
   name: 'Forma',
+
   components: {
     Categories,
     Navigation,
@@ -34,12 +40,12 @@ export default {
 
   emits: ['save'],
 
-  computed: {
-    ...mapState({
-      steps: (state) => state.steps.all,
-      version: (state) => state.steps.version,
-      currentStepIndex: (state) => state.steps.stepIndex,
-    }),
+  data() {
+    return {
+      steps: [],
+      version: null,
+      currentStepIndex: null,
+    }
   },
 
   watch: {
@@ -51,7 +57,7 @@ export default {
     },
   },
 
-  beforeCreate() {
+  created() {
     let version = this.$route.path.split('/')[2]
     const stepsSelected = this.allSteps[version]
 
@@ -60,15 +66,13 @@ export default {
       this.$router.push({ name: version + stepsSelected[0].name })
     }
 
-    this.$store.commit('steps/addVersion', version)
-    this.$store.commit('steps/addSteps', stepsSelected)
-    this.$store.commit('steps/changeStepIndexByRoute', version + stepsSelected[0].name)
-  },
+    this.version = version
+    this.steps = stepsSelected
+    this.changeStepIndexByRoute(version + stepsSelected[0].name)
 
-  created() {
     // Trigger history change
     window.onpopstate = () => {
-      this.$store.commit('steps/changeStepIndexByRoute', this.$route.name)
+      this.changeStepIndexByRoute(this.$route.name)
     }
   },
 
@@ -79,6 +83,11 @@ export default {
         return true
       }
       return false
+    },
+
+    changeStepIndexByRoute(route) {
+      const index = this.steps.findIndex((element) => this.version + element.name === route)
+      this.currentStepIndex = index > -1 ? index : 0
     },
   },
 }

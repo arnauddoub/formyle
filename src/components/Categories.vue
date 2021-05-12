@@ -18,20 +18,22 @@
 
 <script>
 export default {
+  props: {
+    steps: {
+      type: Object,
+      required: true,
+    },
+    currentStepIndex: {
+      type: Number,
+      required: true,
+    },
+  },
+
   data() {
     return {
       width: 0,
       categories: [],
     }
-  },
-
-  computed: {
-    steps() {
-      return this.$store.state.steps.all
-    },
-    currentStepIndex() {
-      return this.$store.state.steps.stepIndex
-    },
   },
 
   watch: {

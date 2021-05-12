@@ -36,19 +36,22 @@ export default {
     ArrowLeftIcon,
   },
 
-  emits: ['onComplete', 'validateStep'],
-
-  computed: {
-    steps() {
-      return this.$store.state.steps.all
+  props: {
+    steps: {
+      type: Object,
+      required: true,
     },
-    version() {
-      return this.$store.state.steps.version
+    version: {
+      type: String,
+      required: true,
     },
-    currentStepIndex() {
-      return this.$store.state.steps.stepIndex
+    currentStepIndex: {
+      type: Number,
+      required: true,
     },
   },
+
+  emits: ['onComplete', 'validateStep', 'update:current-step-index'],
 
   methods: {
     prevStep() {
@@ -56,7 +59,7 @@ export default {
       const step = this.steps[index]
       if (step) {
         this.$router.push({ name: this.version + step.name })
-        this.$store.commit('steps/changeStepIndex', index)
+        this.$emit('update:current-step-index', index)
       }
     },
     nextStep() {
@@ -64,7 +67,7 @@ export default {
       const step = this.steps[index]
       if (step) {
         this.$router.push({ name: this.version + step.name })
-        this.$store.commit('steps/changeStepIndex', index)
+        this.$emit('update:current-step-index', index)
       }
     },
   },
