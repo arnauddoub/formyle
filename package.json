@@ -40,21 +40,18 @@
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.1",
-    "@types/jest": "^26.0.23",
-    "@vue/babel-preset-app": "^4.5.12",
-    "axios": "^0.21.1",
-    "babel-jest": "^26.6.3",
     "tailwindcss": "^2.1.2",
-    "ts-jest": "^26.5.5",
-    "typescript": "^4.2.4",
     "vue": "^3.0.11"
   },
   "devDependencies": {
     "@tailwindcss/jit": "^0.1.18",
+    "@types/jest": "^26.0.23",
     "@vitejs/plugin-vue": "^1.2.2",
+    "@vue/babel-preset-app": "^4.5.13",
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/test-utils": "^2.0.0-rc.6",
     "autoprefixer": "^10.2.5",
+    "babel-jest": "^26.6.3",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
@@ -62,6 +59,8 @@
     "jest": "^26.6.3",
     "postcss": "^8.2.13",
     "prettier": "^2.2.1",
+    "ts-jest": "^26.5.6",
+    "typescript": "^4.2.4",
     "vite": "^2.2.4",
     "vitepress": "^0.13.2",
     "vue-jest": "^5.0.0-alpha.7"
