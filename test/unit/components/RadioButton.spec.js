@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import RadioButton from '@/components/RadioButton.vue'
+import RadioButton from '@/components/radio-button'
 
 describe('RadioButton.vue', () => {
   it('set checked radio input', async () => {

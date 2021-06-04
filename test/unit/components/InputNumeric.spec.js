@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import InputNumeric from '@/components/InputNumeric.vue'
+import InputNumeric from '@/components/input-numeric'
 
 describe('InputNumeric.vue', () => {
   it('should display the correct format', async () => {

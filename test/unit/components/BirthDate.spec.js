@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import BirthDate from '@/components/BirthDate.vue'
+import BirthDate from '@/components/birth-date'
 import Maska from 'maska'
 
 describe('BirthDate.vue', () => {
