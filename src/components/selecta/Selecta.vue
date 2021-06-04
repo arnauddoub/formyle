@@ -8,6 +8,8 @@
 import { computed } from 'vue'
 
 export default {
+  name: 'Selecta',
+
   props: {
     modelValue: {
       type: [String, Number],

@@ -21,6 +21,8 @@
 
 <script>
 export default {
+  name: 'Field',
+
   props: {
     type: {
       type: String,

@@ -18,6 +18,8 @@
 import { computed } from 'vue'
 
 export default {
+  name: 'RadioButton',
+
   props: {
     modelValue: {
       type: [String, Number],

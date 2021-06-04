@@ -4,10 +4,12 @@
 
 <script>
 import { computed, watch, ref } from 'vue'
-import { stripNaN } from '../utils/regex'
-import { readableNumber, stripFirstZero } from '../utils/format'
+import { stripNaN } from '@/utils/regex'
+import { readableNumber, stripFirstZero } from '@/utils/format'
 
 export default {
+  name: 'InputNumeric',
+
   props: {
     modelValue: {
       type: Number,

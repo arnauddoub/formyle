@@ -9,6 +9,8 @@
 
 <script>
 export default {
+  name: 'Heading',
+
   props: {
     size: {
       type: Number,

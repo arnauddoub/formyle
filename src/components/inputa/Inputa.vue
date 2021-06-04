@@ -6,6 +6,8 @@
 import { computed } from 'vue'
 
 export default {
+  name: 'Inputa',
+
   props: {
     modelValue: {
       type: [String, Number],
