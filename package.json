@@ -36,7 +36,8 @@
     ".": {
       "import": "./dist/formyle.es.js",
       "require": "./dist/formyle.umd.js"
-    }
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "dependencies": {
     "@heroicons/vue": "^1.0.1",
@@ -64,6 +65,7 @@
     "typescript": "^4.2.4",
     "vite": "^2.2.4",
     "vitepress": "^0.14.0",
-    "vue-jest": "^5.0.0-alpha.7"
+    "vue-jest": "^5.0.0-alpha.7",
+    "vue-router": "4"
   }
 }
