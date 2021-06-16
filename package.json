@@ -52,6 +52,8 @@
     "@vue/babel-preset-app": "^4.5.13",
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/test-utils": "^2.0.0-rc.6",
+    "@vuelidate/core": "^2.0.0-alpha.19",
+    "@vuelidate/validators": "^2.0.0-alpha.17",
     "autoprefixer": "^10.2.5",
     "babel-jest": "^26.6.3",
     "eslint": "^7.25.0",
@@ -66,6 +68,8 @@
     "vite": "^2.2.4",
     "vitepress": "^0.14.0",
     "vue-jest": "^5.0.0-alpha.7",
-    "vue-router": "4"
+    "vue-router": "4",
+    "vuex": "^4.0.1",
+    "vuex-map-fields": "^1.4.1"
   }
 }

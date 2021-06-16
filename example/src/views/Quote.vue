@@ -4,14 +4,9 @@
 
 <script>
 import { steps } from '../steps'
-import Forma from '../components/forma'
 
 export default {
   name: 'Quote',
-
-  components: {
-    Forma,
-  },
 
   data() {
     return {
