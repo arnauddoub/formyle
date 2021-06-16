@@ -3,7 +3,8 @@
   "version": "0.0.14",
   "description": "Advanced Vue 3 form conception",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite example",
+    "build:example": "vite build",
     "build": "vite build",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
