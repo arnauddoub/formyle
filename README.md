@@ -9,17 +9,25 @@ Advanced Vue 3 form conception
 - 🖨 Multiple versions (A/B Testing, source, ...)
 - Soon (...)
 
-## Getting Started
+## Install
 
 ### npm:
-```sh
-npm install
-npm run dev
-npm run build
+```bash
+npm install formyle
 ```
 ### yarn:
-```sh
-yarn
-yarn dev
-yarn build
+```bash
+yarn add formyle
+```
+
+## Usage
+
+### All components
+
+```js
+import { createApp } from 'vue'
+import Formyle from 'formyle'
+import 'formyle/dist/style.css'
+
+createApp.use(Formyle)
 ```
