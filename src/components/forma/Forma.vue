@@ -1,16 +1,16 @@
 <template>
   <div v-if="currentStepIndex !== null && currentStepIndex >= 0" class="overflow-hidden" @keyup.enter="validateStep">
     <form class="max-w-2xl mx-auto mt-20 px-4" autocomplete="off" @submit.prevent="">
-      <categories :steps="steps" :current-step-index="currentStepIndex" />
+      <categories :steps="activeSteps" :current-step-index="currentStepIndex" />
       <router-view v-slot="{ Component, route }" @nextStep="validateStep">
         <transition :name="route.meta.transitionName" mode="out-in">
-          <component :is="Component" ref="step" />
+          <component :is="Component" ref="step" @changeStepStatus="changeStepStatus" />
         </transition>
       </router-view>
       <navigation
         ref="navigation"
         v-model:current-step-index="currentStepIndex"
-        :steps="steps"
+        :steps="activeSteps"
         :version="version"
         @onComplete="validateStep() && $emit('save')"
         @validateStep="validateStep"
@@ -38,6 +38,12 @@ export default {
       version: null,
       currentStepIndex: null,
     }
+  },
+
+  computed: {
+    activeSteps() {
+      return this.steps.filter((step) => step.active != false)
+    },
   },
 
   watch: {
@@ -80,6 +86,10 @@ export default {
     changeStepIndexByRoute(route) {
       const index = this.steps.findIndex((element) => this.version + element.name === route)
       this.currentStepIndex = index > -1 ? index : 0
+    },
+
+    changeStepStatus(index, status) {
+      this.steps[index].active = status
     },
   },
 }

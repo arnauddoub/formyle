@@ -39,6 +39,23 @@ export default {
   },
 
   watch: {
+    steps: {
+      immediate: true,
+      handler() {
+        this.categories = []
+        this.width = 0
+
+        this.distinctCategory()
+        if (this.currentStepIndex > 0) {
+          for (let i = 0; i < this.currentStepIndex + 1; i++) {
+            this.progressBarIncrement(i)
+          }
+        } else {
+          this.progressBarIncrement(this.currentStepIndex)
+        }
+      },
+    },
+
     currentStepIndex(newValue, oldValue) {
       if (newValue > oldValue) {
         this.progressBarIncrement(newValue)
@@ -46,17 +63,6 @@ export default {
         this.progressBarDecrement(newValue + 1)
       }
     },
-  },
-
-  mounted() {
-    this.distinctCategory()
-    if (this.currentStepIndex > 0) {
-      for (let i = 0; i < this.currentStepIndex + 1; i++) {
-        this.progressBarIncrement(i)
-      }
-    } else {
-      this.progressBarIncrement(this.currentStepIndex)
-    }
   },
 
   methods: {
@@ -68,21 +74,26 @@ export default {
           this.categories.push({ name: this.steps[categoryIndex].category, active: false, index: categoryIndex })
         }
       })
+      console.log(this.categories)
     },
+
     progressBarIncrement(index) {
       this.width += 100 / this.categories.length / this.countStepByCategory(index)
       this.changeCategoryStatus(index, true)
     },
+
     progressBarDecrement(index) {
       this.width -= 100 / this.categories.length / this.countStepByCategory(index)
       this.changeCategoryStatus(index, false)
     },
+
     countStepByCategory(index) {
       return this.steps.reduce(
         (counter, obj) => (obj.category === this.steps[index].category ? (counter += 1) : counter),
         0,
       )
     },
+
     changeCategoryStatus(index, active) {
       const categoryIndex = this.categories.findIndex((element) => index === element.index)
       if (categoryIndex >= 0) {
