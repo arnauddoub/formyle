@@ -74,7 +74,6 @@ export default {
           this.categories.push({ name: this.steps[categoryIndex].category, active: false, index: categoryIndex })
         }
       })
-      console.log(this.categories)
     },
 
     progressBarIncrement(index) {

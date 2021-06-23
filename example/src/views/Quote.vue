@@ -1,12 +1,22 @@
 <template>
-  <forma ref="form" :all-steps="steps" @save="submit" />
+  <forma ref="form" :all-steps="steps" @save="submit">
+    <template #previous>
+      <arrow-left-icon class="h-5 w-5 mr-2" />
+      Précédent
+    </template>
+  </forma>
 </template>
 
 <script>
 import { steps } from '../steps'
+import { ArrowLeftIcon } from '@heroicons/vue/solid'
 
 export default {
   name: 'Quote',
+
+  components: {
+    ArrowLeftIcon,
+  },
 
   data() {
     return {

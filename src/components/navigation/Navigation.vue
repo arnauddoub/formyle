@@ -6,8 +6,8 @@
       class="flex items-center select-none focus:outline-none"
       @click="prevStep"
     >
-      <arrow-left-icon class="h-5 w-5 mr-2" />
-      Précédent
+      <template v-if="$slots.previous"><slot name="previous" /></template>
+      <template v-else>Précédent</template>
     </button>
     <button
       v-if="currentStepIndex < steps.length - 1"
@@ -29,14 +29,8 @@
 </template>
 
 <script>
-import { ArrowLeftIcon } from '@heroicons/vue/solid'
-
 export default {
   name: 'Navigation',
-
-  components: {
-    ArrowLeftIcon,
-  },
 
   props: {
     steps: {
@@ -64,6 +58,7 @@ export default {
         this.$emit('update:current-step-index', index)
       }
     },
+
     nextStep() {
       const index = this.currentStepIndex + 1
       const step = this.steps[index]

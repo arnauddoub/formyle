@@ -14,7 +14,9 @@
         :version="version"
         @onComplete="validateStep() && $emit('save')"
         @validateStep="validateStep"
-      />
+      >
+        <template v-if="$slots.previous" #previous><slot name="previous" /></template>
+      </navigation>
     </form>
   </div>
 </template>
