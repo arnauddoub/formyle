@@ -1,6 +1,6 @@
 {
   "name": "formyle",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Advanced Vue 3 form conception",
   "scripts": {
     "dev": "vite example",
@@ -41,12 +41,12 @@
     "./dist/style.css": "./dist/style.css"
   },
   "dependencies": {
-    "@heroicons/vue": "^1.0.1",
     "maska": "^1.4.2",
     "tailwindcss": "^2.1.2",
     "vue": "^3.1.0"
   },
   "devDependencies": {
+    "@heroicons/vue": "^1.0.1",
     "@tailwindcss/jit": "^0.1.18",
     "@types/jest": "^26.0.23",
     "@vitejs/plugin-vue": "^1.2.2",
