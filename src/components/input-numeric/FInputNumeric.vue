@@ -8,7 +8,7 @@ import { stripNaN } from '@/utils/regex'
 import { readableNumber, stripFirstZero } from '@/utils/format'
 
 export default {
-  name: 'InputNumeric',
+  name: 'FInputNumeric',
 
   props: {
     modelValue: {

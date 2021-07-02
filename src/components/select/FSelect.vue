@@ -8,7 +8,7 @@
 import { computed } from 'vue'
 
 export default {
-  name: 'Selecta',
+  name: 'FSelect',
 
   props: {
     modelValue: {

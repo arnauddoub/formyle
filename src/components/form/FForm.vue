@@ -1,13 +1,13 @@
 <template>
   <div v-if="currentStepIndex !== null && currentStepIndex >= 0" class="overflow-hidden" @keyup.enter="validateStep">
     <form class="max-w-2xl mx-auto mt-20 px-4" autocomplete="off" @submit.prevent="">
-      <categories :steps="activeSteps" :current-step-index="currentStepIndex" />
+      <f-categories :steps="activeSteps" :current-step-index="currentStepIndex" />
       <router-view v-slot="{ Component, route }" @nextStep="validateStep">
         <transition :name="route.meta.transitionName" mode="out-in">
           <component :is="Component" ref="step" @changeStepStatus="changeStepStatus" />
         </transition>
       </router-view>
-      <navigation
+      <f-navigation
         ref="navigation"
         v-model:current-step-index="currentStepIndex"
         :steps="activeSteps"
@@ -16,14 +16,14 @@
         @validateStep="validateStep"
       >
         <template v-if="$slots.previous" #previous><slot name="previous" /></template>
-      </navigation>
+      </f-navigation>
     </form>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Forma',
+  name: 'FForm',
 
   props: {
     allSteps: {

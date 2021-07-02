@@ -1,10 +1,10 @@
 <template>
-  <forma ref="form" :all-steps="steps" @save="submit">
+  <f-form ref="form" :all-steps="steps" @save="submit">
     <template #previous>
       <arrow-left-icon class="h-5 w-5 mr-2" />
       Précédent
     </template>
-  </forma>
+  </f-form>
 </template>
 
 <script>

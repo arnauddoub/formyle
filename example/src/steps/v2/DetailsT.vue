@@ -1,16 +1,16 @@
 <template>
   <div class="details">
-    <fields>
-      <field label="Téléphone">
-        <input-numeric v-model="value" :allow-decimal="true" />
-      </field>
-      <field label="Email">
-        <inputa />
-      </field>
-    </fields>
-    <field label="Adresse">
-      <inputa />
-    </field>
+    <f-fields>
+      <f-field label="Téléphone">
+        <f-input-numeric v-model="value" :allow-decimal="true" />
+      </f-field>
+      <f-field label="Email">
+        <f-input id="email" name="email" />
+      </f-field>
+    </f-fields>
+    <f-field label="Adresse">
+      <f-input id="address" name="address" />
+    </f-field>
   </div>
 </template>
 

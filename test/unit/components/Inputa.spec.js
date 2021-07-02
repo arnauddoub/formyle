@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Inputa from '@/components/inputa'
+import Inputa from '@/components/input'
 
 describe('Inputa.vue', () => {
   it('should display header text', () => {

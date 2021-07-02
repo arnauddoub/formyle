@@ -18,7 +18,7 @@
 import { computed } from 'vue'
 
 export default {
-  name: 'RadioButton',
+  name: 'FRadioButton',
 
   props: {
     modelValue: {

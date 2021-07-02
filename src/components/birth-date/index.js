@@ -1,4 +1,4 @@
-import BirthDate from './BirthDate.vue'
+import BirthDate from './FBirthDate.vue'
 
 BirthDate.install = (Vue) => {
   Vue.component(BirthDate.name, BirthDate)

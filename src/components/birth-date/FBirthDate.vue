@@ -29,7 +29,7 @@ import { ref, reactive, watch } from 'vue'
 import { maska } from 'maska'
 
 export default {
-  name: 'BirthDate',
+  name: 'FBirthDate',
 
   directives: { maska },
 

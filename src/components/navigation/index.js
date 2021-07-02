@@ -1,4 +1,4 @@
-import Navigation from './Navigation.vue'
+import Navigation from './FNavigation.vue'
 
 Navigation.install = (Vue) => {
   Vue.component(Navigation.name, Navigation)

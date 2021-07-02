@@ -1,4 +1,4 @@
-import RadioButton from './RadioButton.vue'
+import RadioButton from './FRadioButton.vue'
 
 RadioButton.install = (Vue) => {
   Vue.component(RadioButton.name, RadioButton)

@@ -6,7 +6,7 @@
 import { computed } from 'vue'
 
 export default {
-  name: 'Inputa',
+  name: 'FInput',
 
   props: {
     modelValue: {

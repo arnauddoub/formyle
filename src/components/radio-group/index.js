@@ -1,4 +1,4 @@
-import RadioGroup from './RadioGroup.vue'
+import RadioGroup from './FRadioGroup.vue'
 
 RadioGroup.install = (Vue) => {
   Vue.component(RadioGroup.name, RadioGroup)

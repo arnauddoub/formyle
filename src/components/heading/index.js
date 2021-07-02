@@ -1,4 +1,4 @@
-import Heading from './Heading.vue'
+import Heading from './FHeading.vue'
 
 Heading.install = (Vue) => {
   Vue.component(Heading.name, Heading)

@@ -2,14 +2,14 @@ import BirthDate from './components/birth-date'
 import Categories from './components/categories'
 import Field from './components/field'
 import Fields from './components/fields'
-import Forma from './components/forma'
+import Form from './components/form'
 import Heading from './components/heading'
+import Input from './components/input'
 import InputNumeric from './components/input-numeric'
-import Inputa from './components/inputa'
 import Navigation from './components/navigation'
 import RadioButton from './components/radio-button'
 import RadioGroup from './components/radio-group'
-import Selecta from './components/selecta'
+import Select from './components/select'
 
 import './styles/main.css'
 
@@ -18,14 +18,14 @@ const components = {
   Categories,
   Field,
   Fields,
-  Forma,
+  Form,
   Heading,
   InputNumeric,
-  Inputa,
+  Input,
   Navigation,
   RadioButton,
   RadioGroup,
-  Selecta,
+  Select,
 }
 
 function install(Vue) {
@@ -40,11 +40,11 @@ export { default as BirthDate } from './components/birth-date'
 export { default as Categories } from './components/categories'
 export { default as Field } from './components/field'
 export { default as Fields } from './components/fields'
-export { default as Forma } from './components/forma'
+export { default as Form } from './components/form'
 export { default as Heading } from './components/heading'
-export { default as InputNumeric } from './components/inputa'
-export { default as Inputa } from './components/input-numeric'
+export { default as Input } from './components/input'
+export { default as InputNumeric } from './components/input-numeric'
 export { default as Navigation } from './components/navigation'
 export { default as RadioButton } from './components/radio-button'
 export { default as RadioGroup } from './components/radio-group'
-export { default as Selecta } from './components/selecta'
+export { default as Select } from './components/select'

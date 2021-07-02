@@ -1,11 +1,11 @@
 <template>
-  <div class="md:grid grid-flow-col md:gap-x-4">
+  <div class="flex space-x-4">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Fields',
+  name: 'FRadioGroup',
 }
 </script>

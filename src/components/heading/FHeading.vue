@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'Heading',
+  name: 'FHeading',
 
   props: {
     size: {

@@ -1,9 +1,9 @@
 <template>
   <div>
-    <heading :size="3" :center="true">C'est parti ! Quel animal souhaitez-vous assurer ?</heading>
-    <field type="radio">
-      <radio-group>
-        <radio-button
+    <f-heading :size="3" :center="true">C'est parti ! Quel animal souhaitez-vous assurer ?</f-heading>
+    <f-field type="radio">
+      <f-radio-group>
+        <f-radio-button
           id="which_pet-chien"
           v-model="whichPet"
           name="which_pet"
@@ -14,8 +14,8 @@
         >
           <img src="../../assets/dog.svg" alt="dog" width="60" height="60" />
           <div class="mt-2">Chien</div>
-        </radio-button>
-        <radio-button
+        </f-radio-button>
+        <f-radio-button
           id="which_pet-chat"
           v-model="whichPet"
           name="which_pet"
@@ -26,12 +26,12 @@
         >
           <img src="../../assets/cat.svg" alt="cat" width="60" height="60" />
           <div class="mt-2">Chat</div>
-        </radio-button>
-      </radio-group>
+        </f-radio-button>
+      </f-radio-group>
       <template v-if="v$.whichPet.$error" #error>
         <span v-if="v$.whichPet.required">Veuillez sélectionner votre animal à assurer</span>
       </template>
-    </field>
+    </f-field>
   </div>
 </template>
 

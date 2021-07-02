@@ -1,4 +1,4 @@
-import InputNumeric from './InputNumeric.vue'
+import InputNumeric from './FInputNumeric.vue'
 
 InputNumeric.install = (Vue) => {
   Vue.component(InputNumeric.name, InputNumeric)
