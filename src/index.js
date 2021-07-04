@@ -48,3 +48,5 @@ export { default as Navigation } from './components/navigation'
 export { default as RadioButton } from './components/radio-button'
 export { default as RadioGroup } from './components/radio-group'
 export { default as Select } from './components/select'
+
+export { getStepsRoutes } from './utils/steps'
