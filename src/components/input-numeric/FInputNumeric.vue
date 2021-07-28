@@ -53,7 +53,7 @@ export default {
       parseValue = stripFirstZero(parseValue)
       // str = this.limitDecimal(str, oldVal)
       input.value = parseValue
-      ctx.emit('update:modelValue', parseInt(parseValue))
+      ctx.emit('update:modelValue', parseInt(parseValue) || null)
     }
 
     return {
