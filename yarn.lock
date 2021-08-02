@@ -4558,9 +4558,9 @@ markdown-it@^12.0.6:
     uc.micro "^1.0.5"
 
 maska@^1.4.2:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/maska/-/maska-1.4.3.tgz#3f031a43100a8226c508a08a143760c981f6cf36"
-  integrity sha512-b7xmNjd3h5qXRsnarIc261nEP2Ua7HYI1aFDN/gGmjoIP9QbclLiGH6xbTIrPGUWOJzFZd1YR4NjpwbhZHmfDA==
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/maska/-/maska-1.4.5.tgz#cf44bffe56f4f162b06b30ff0cf265f46d60d146"
+  integrity sha512-RTtysWQGipkQNC/Baq4/VsWIh4pAw9TRXDZhqSyrrIaGCXFRkfXORWu7d6Jj1Xbnp7rE0Gnnbwx5ylfLRfCdTA==
 
 matchit@^1.0.0:
   version "1.1.0"
