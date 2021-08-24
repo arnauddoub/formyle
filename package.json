@@ -52,7 +52,7 @@
     "@vue/babel-preset-app": "^4.5.13",
     "@vue/compiler-sfc": "^3.0.11",
     "@vue/test-utils": "^2.0.0-rc.6",
-    "@vuelidate/core": "^2.0.0-alpha.19",
+    "@vuelidate/core": "^2.0.0-alpha.24",
     "@vuelidate/validators": "^2.0.0-alpha.21",
     "autoprefixer": "^10.3.2",
     "babel-jest": "^26.6.3",
