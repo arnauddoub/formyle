@@ -1093,10 +1093,10 @@
   resolved "https://registry.yarnpkg.com/@francoischalifour/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.28.tgz#a5ad7996f42e43e4acbb4e0010d663746d0e9997"
   integrity sha512-bprfNmYt1opFUFEtD2XfY/kEsm13bzHQgU80uMjhuK0DJ914IjolT1GytpkdM6tJ4MBvyiJPP+bTtWO+BZ7c7w==
 
-"@heroicons/vue@^1.0.1":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@heroicons/vue/-/vue-1.0.3.tgz#8e8948972df7f42f00a09f68d26fbfd16bb18692"
-  integrity sha512-pj1foeBadGwRDT3ldEQ3t+C6p8Yw7LDoINvemJpH3j6Xdpm0iO4014OL288nueBnPKY7/xrHSJwy0dZIum1Eyw==
+"@heroicons/vue@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@heroicons/vue/-/vue-1.0.4.tgz#dcfd957a9abc827321054e643f6fb73629b3eef6"
+  integrity sha512-jm7JMoUGr7Asn07oYNmewxkdQALnskTzRo17iGpHG/apLcc+GFdvdN4XvWZ2awStodaqeZ4eYWg7UcI0LvLETQ==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
@@ -1768,12 +1768,12 @@
   dependencies:
     vue-demi "^0.9.1"
 
-"@vuelidate/validators@^2.0.0-alpha.17":
-  version "2.0.0-alpha.19"
-  resolved "https://registry.yarnpkg.com/@vuelidate/validators/-/validators-2.0.0-alpha.19.tgz#fa396b95a1c7fdd31f22a69d232a1c3db134ec8c"
-  integrity sha512-5TQxi1Wa6jFPYZ4UIUI8RKR2nqN/yujPxRjUMh5vCOhVXoqXPMfoYdfs5DBtfABhmjj7LTtXrZ78WVMQkL9tNw==
+"@vuelidate/validators@^2.0.0-alpha.21":
+  version "2.0.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/@vuelidate/validators/-/validators-2.0.0-alpha.21.tgz#bc1e92865aa9ce213b4ba0acc26fd78bf27dd4ac"
+  integrity sha512-Ch+dW2hSWxAv+DcCEbpMVB58rylrCRxrGQMvL1gJKtq2SdrIrvw+IfgGL9VtxLx8U8gqlDiqy7M4Ycu59rUSnA==
   dependencies:
-    vue-demi "^0.9.1"
+    vue-demi "^0.11.3"
 
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.5"
@@ -6370,6 +6370,11 @@ vitepress@^0.15.4:
     sirv "^1.0.12"
     vite "^2.3.7"
     vue "^3.1.1"
+
+vue-demi@^0.11.3:
+  version "0.11.3"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.11.3.tgz#dd7495b92b495ecfa35675bf024b1358a7add150"
+  integrity sha512-DpM0TTMpclRZDV6AIacgg837zrim/C9Zn+2ztXBs9hsESJN9vC83ztjTe4KC4HgJuVle8YUjPp7HTwWtwOHfmg==
 
 vue-demi@^0.9.1:
   version "0.9.1"
