@@ -4372,10 +4372,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-maska@^1.4.2:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/maska/-/maska-1.4.5.tgz#cf44bffe56f4f162b06b30ff0cf265f46d60d146"
-  integrity sha512-RTtysWQGipkQNC/Baq4/VsWIh4pAw9TRXDZhqSyrrIaGCXFRkfXORWu7d6Jj1Xbnp7rE0Gnnbwx5ylfLRfCdTA==
+maska@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/maska/-/maska-1.4.6.tgz#a19614b49d533258b695b4c67b031b06f8bfe9c0"
+  integrity sha512-dEZcoGp5Wufm2PZ4qZD81WKNaWO6XBIiHLazt5xShl4lydlH/5ZoLGEyJfzBaREXbAnsE5THShLyJKIaIeIuvA==
 
 merge-stream@^2.0.0:
   version "2.0.0"
