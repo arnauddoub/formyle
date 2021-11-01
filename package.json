@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "maska": "^1.4.6",
-    "tailwindcss": "^2.2.16",
+    "tailwindcss": "^2.2.19",
     "vue": "^3.2.7"
   },
   "devDependencies": {
