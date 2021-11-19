@@ -1093,10 +1093,10 @@
   resolved "https://registry.yarnpkg.com/@francoischalifour/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.0.0-alpha.28.tgz#a5ad7996f42e43e4acbb4e0010d663746d0e9997"
   integrity sha512-bprfNmYt1opFUFEtD2XfY/kEsm13bzHQgU80uMjhuK0DJ914IjolT1GytpkdM6tJ4MBvyiJPP+bTtWO+BZ7c7w==
 
-"@heroicons/vue@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@heroicons/vue/-/vue-1.0.4.tgz#dcfd957a9abc827321054e643f6fb73629b3eef6"
-  integrity sha512-jm7JMoUGr7Asn07oYNmewxkdQALnskTzRo17iGpHG/apLcc+GFdvdN4XvWZ2awStodaqeZ4eYWg7UcI0LvLETQ==
+"@heroicons/vue@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@heroicons/vue/-/vue-1.0.5.tgz#ccef02a9a75e47129a0b8faf5d1d93bd90723264"
+  integrity sha512-idWtp20Fjr7mqnD7EdGDUDi83oWHnx3SwyuQY6GZyF33OApzpBOLxz7xa4t6rPOddGz9tI5RGnndLk+ake7ijQ==
 
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
@@ -1508,10 +1508,10 @@
     lodash.kebabcase "^4.1.1"
     svg-tags "^1.0.0"
 
-"@vue/babel-preset-app@^4.5.13":
-  version "4.5.13"
-  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-4.5.13.tgz#cb475321e4c73f7f110dac29a48c2a9cb80afeb6"
-  integrity sha512-pM7CR3yXB6L8Gfn6EmX7FLNE3+V/15I3o33GkSNsWvgsMp6HVGXKkXgojrcfUUauyL1LZOdvTmu4enU2RePGHw==
+"@vue/babel-preset-app@^4.5.15":
+  version "4.5.15"
+  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-4.5.15.tgz#f6bc08f8f674e98a260004234cde18b966d72eb0"
+  integrity sha512-J+YttzvwRfV1BPczf8r3qCevznYk+jh531agVF+5EYlHF4Sgh/cGXTz9qkkiux3LQgvhEGXgmCteg1n38WuuKg==
   dependencies:
     "@babel/core" "^7.11.0"
     "@babel/helper-compilation-targets" "^7.9.6"
@@ -1746,10 +1746,10 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.22.tgz#26dcbe5e530f6c1f2de5ca9aeab92ab00f523b41"
   integrity sha512-qWVav014mpjEtbWbEgl0q9pEyrrIySKum8UVYjwhC6njrKzknLZPvfuYdQyVbApsqr94tf/3dP4pCuZmmjdCWQ==
 
-"@vue/test-utils@^2.0.0-rc.15":
-  version "2.0.0-rc.15"
-  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.0.0-rc.15.tgz#425d0ecd639fbe6383e240f4542907b3bfccde6e"
-  integrity sha512-cb+Ri4PDRhtGCJuaLyl1HO9jXcwEj6AFwcNXace8FhhwelDzOdjyIgOb25xtDiUojzWjPuzGLKZQr/5WB7MLew==
+"@vue/test-utils@^2.0.0-rc.16":
+  version "2.0.0-rc.16"
+  resolved "https://registry.yarnpkg.com/@vue/test-utils/-/test-utils-2.0.0-rc.16.tgz#59380f02870f856ac002a29c02681d3f3fcbafeb"
+  integrity sha512-TubikDVkI2LuRKRPSLv3lYpbpvvucT2DIcGqfBVpvYs4W19u0EBTJEdmfwmSuLY7H1TyAr9Stur3PI1sWWvTGQ==
 
 "@vuelidate/core@^2.0.0-alpha.32":
   version "2.0.0-alpha.32"
@@ -4409,10 +4409,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-maska@^1.4.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/maska/-/maska-1.4.6.tgz#a19614b49d533258b695b4c67b031b06f8bfe9c0"
-  integrity sha512-dEZcoGp5Wufm2PZ4qZD81WKNaWO6XBIiHLazt5xShl4lydlH/5ZoLGEyJfzBaREXbAnsE5THShLyJKIaIeIuvA==
+maska@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/maska/-/maska-1.5.0.tgz#6e2f6386d290ab7dc8b44cfc04f34891e06a1e25"
+  integrity sha512-BwZXzs5gHeu6wtn3iWFqrKRtcsM3sTpkHvfAngVNVNlN7tl9ZyQUeHTz11s9Sy7Bq1MoQ+xyR/+IzghY8nR84Q==
 
 merge-stream@^2.0.0:
   version "2.0.0"
