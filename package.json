@@ -41,7 +41,7 @@
     "./dist/style.css": "./dist/style.css"
   },
   "dependencies": {
-    "maska": "^1.4.6",
+    "maska": "^1.5.0",
     "tailwindcss": "^2.2.19",
     "vue": "^3.2.7"
   },
