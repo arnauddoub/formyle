@@ -51,7 +51,7 @@
     "@vitejs/plugin-vue": "^1.10.1",
     "@vue/babel-preset-app": "^4.5.15",
     "@vue/compiler-sfc": "^3.2.23",
-    "@vue/test-utils": "^2.0.0-rc.17",
+    "@vue/test-utils": "^2.0.0-rc.18",
     "@vuelidate/core": "^2.0.0-alpha.32",
     "@vuelidate/validators": "^2.0.0-alpha.25",
     "autoprefixer": "^10.4.0",
