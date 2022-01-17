@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@heroicons/vue": "^1.0.5",
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^27.4.0",
     "@vitejs/plugin-vue": "^1.10.2",
     "@vue/babel-preset-app": "^4.5.15",
     "@vue/compiler-sfc": "^3.2.23",
