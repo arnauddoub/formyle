@@ -54,7 +54,7 @@
     "@vue/test-utils": "^2.0.0-rc.18",
     "@vuelidate/core": "^2.0.0-alpha.34",
     "@vuelidate/validators": "^2.0.0-alpha.26",
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.7",
     "babel-jest": "^26.6.3",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
