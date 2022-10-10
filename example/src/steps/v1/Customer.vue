@@ -34,7 +34,7 @@ import useVuelidate from '@vuelidate/core'
 import { required, email } from '@vuelidate/validators'
 import { createHelpers } from 'vuex-map-fields'
 
-import { AtSymbolIcon } from '@heroicons/vue/outline'
+import { AtSymbolIcon } from '@heroicons/vue/24/outline'
 
 const { mapFields } = createHelpers({
   getterType: 'quote/getField',

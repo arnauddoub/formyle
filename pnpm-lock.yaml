@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@heroicons/vue': ^1.0.5
+  '@heroicons/vue': ^2.0.12
   '@vitejs/plugin-vue': ^3.1.2
   '@vue/babel-preset-app': ^5.0.8
   '@vue/compiler-sfc': ^3.2.40
@@ -30,7 +30,7 @@ dependencies:
   vue: 3.2.40
 
 devDependencies:
-  '@heroicons/vue': 1.0.5_vue@3.2.40
+  '@heroicons/vue': 2.0.12_vue@3.2.40
   '@vitejs/plugin-vue': 3.1.2_vite@3.1.7+vue@3.2.40
   '@vue/babel-preset-app': 5.0.8_vue@3.2.40
   '@vue/compiler-sfc': 3.2.40
@@ -1284,8 +1284,8 @@ packages:
       - supports-color
     dev: true
 
-  /@heroicons/vue/1.0.5_vue@3.2.40:
-    resolution: {integrity: sha512-idWtp20Fjr7mqnD7EdGDUDi83oWHnx3SwyuQY6GZyF33OApzpBOLxz7xa4t6rPOddGz9tI5RGnndLk+ake7ijQ==}
+  /@heroicons/vue/2.0.12_vue@3.2.40:
+    resolution: {integrity: sha512-ypuQl/Wei7BoShO65AdRVikXDaSt6hJBRuKs2pVd/6HvxfEz18oXraH+J5G/QPIwObMEVhMb6nkOs9l3WZv/gA==}
     peerDependencies:
       vue: '>= 3'
     dependencies:

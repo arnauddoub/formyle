@@ -1,7 +1,7 @@
 <template>
   <f-form ref="form" :all-steps="steps" @save="submit">
     <template #previous>
-      <arrow-left-icon class="h-5 w-5 mr-2" />
+      <arrow-left-icon class="h-5 mr-2 w-5" />
       Précédent
     </template>
   </f-form>
@@ -9,7 +9,7 @@
 
 <script>
 import { steps } from '../steps'
-import { ArrowLeftIcon } from '@heroicons/vue/solid'
+import { ArrowLeftIcon } from '@heroicons/vue/24/solid'
 
 export default {
   name: 'Quote',
