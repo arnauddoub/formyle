@@ -13,11 +13,11 @@ Advanced Vue 3 form conception
 
 ### npm:
 ```bash
-npm install formyle
+pnpm install formyle
 ```
 ### yarn:
 ```bash
-yarn add formyle
+pnpm add formyle
 ```
 
 ## Usage
