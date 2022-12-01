@@ -58,7 +58,7 @@
     "postcss": "^8.4.17",
     "prettier": "^2.7.1",
     "typescript": "^4.8.4",
-    "vite": "^3.1.7",
+    "vite": "^3.2.4",
     "vue-router": "^4.1.5",
     "vuex": "^4.0.1",
     "vuex-map-fields": "^1.4.1"
